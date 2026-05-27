@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GanttOWN — Project scheduling software you actually own.</title>
+  <meta name="description" content="GanttOWN is a one-time purchase Gantt chart app for Mac and Windows. No subscription. No cloud. Drag-and-drop scheduling, critical path, milestones, and PDF export."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0a0f1e;
+      --surface: #111827;
+      --border:  #1e293b;
+      --text:    #f1f5f9;
+      --muted:   #64748b;
+      --subtle:  #94a3b8;
+      --indigo:  #6366f1;
+      --violet:  #8b5cf6;
+      --emerald: #10b981;
+      --amber:   #f59e0b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,15,30,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+      height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 16px; color: #fff;
+    }
+
+    .logo-text { font-weight: 700; font-size: 16px; color: var(--text); }
+    .logo-text span { color: var(--violet); }
+
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+
+    .nav-link {
+      font-size: 13px; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--indigo); color: #fff;
+      font-size: 13px; font-weight: 600;
+      padding: 7px 16px; border-radius: 7px;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 148px 40px 90px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 500px;
+      background: radial-gradient(ellipse, rgba(99,102,241,0.13) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.25);
+      border-radius: 20px; padding: 5px 14px;
+      font-size: 12px; font-weight: 600; color: #a5b4fc;
+      margin-bottom: 28px; letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5.5vw, 62px);
+      font-weight: 800; letter-spacing: -1.5px; line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--subtle); max-width: 520px;
+      margin: 0 auto 40px; line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap; margin-bottom: 48px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      color: #fff; font-size: 15px; font-weight: 700;
+      padding: 13px 28px; border-radius: 10px;
+      text-decoration: none; transition: opacity 0.2s, transform 0.2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--subtle); font-size: 14px; font-weight: 500;
+      padding: 12px 24px; border-radius: 10px;
+      text-decoration: none; transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--indigo); color: var(--text); }
+
+    .hero-note {
+      font-size: 12px; color: var(--muted);
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 80px 40px;
+      max-width: 1060px; margin: 0 auto;
+    }
+
+    .section-label {
+      text-align: center; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--indigo); margin-bottom: 12px;
+    }
+
+    .section-title {
+      text-align: center; font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 800; letter-spacing: -0.5px; margin-bottom: 48px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 22px;
+    }
+
+    .feature-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+    .feature-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .feature-desc { font-size: 13px; color: var(--subtle); line-height: 1.6; }
+
+    /* ── WHO ── */
+    .who {
+      padding: 80px 40px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .who-inner { max-width: 1060px; margin: 0 auto; }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px; margin-top: 48px;
+    }
+
+    .who-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px;
+      font-size: 13px;
+    }
+
+    .who-card strong {
+      display: block; font-size: 14px;
+      font-weight: 700; margin-bottom: 6px; color: var(--text);
+    }
+
+    .who-card p { color: var(--subtle); line-height: 1.6; }
+
+    /* ── PRICING ── */
+    .pricing {
+      padding: 80px 40px;
+      max-width: 1060px; margin: 0 auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px; margin-top: 48px;
+    }
+
+    .plan-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+      display: flex; flex-direction: column; gap: 20px;
+      position: relative; transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .plan-card:hover {
+      border-color: rgba(99,102,241,0.4);
+      transform: translateY(-2px);
+    }
+
+    .plan-card.featured {
+      border-color: var(--indigo);
+      box-shadow: 0 0 40px rgba(99,102,241,0.12);
+    }
+
+    .plan-badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      color: #fff; font-size: 11px; font-weight: 700;
+      padding: 3px 12px; border-radius: 20px; white-space: nowrap;
+      letter-spacing: 0.5px;
+    }
+
+    .plan-name { font-size: 18px; font-weight: 800; }
+    .plan-desc { font-size: 13px; color: var(--subtle); margin-top: 4px; }
+
+    .plan-price {
+      font-size: 40px; font-weight: 800; letter-spacing: -1px;
+      color: var(--text);
+    }
+    .plan-price span { font-size: 14px; font-weight: 400; color: var(--muted); }
+
+    .plan-members {
+      font-size: 12px; color: var(--subtle); margin-top: 4px;
+    }
+
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .plan-features li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 13px; color: var(--subtle);
+    }
+
+    .plan-features li::before {
+      content: '✓'; color: var(--emerald);
+      font-weight: 700; font-size: 12px; flex-shrink: 0; margin-top: 1px;
+    }
+
+    .plan-cta {
+      display: block; text-align: center;
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      color: #fff; font-size: 14px; font-weight: 700;
+      padding: 12px; border-radius: 9px;
+      text-decoration: none; margin-top: auto;
+      transition: opacity 0.2s;
+    }
+    .plan-cta:hover { opacity: 0.88; }
+
+    .plan-cta.outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--subtle);
+    }
+    .plan-cta.outline:hover { border-color: var(--indigo); color: var(--text); }
+
+    .pricing-note {
+      text-align: center; margin-top: 28px;
+      font-size: 13px; color: var(--muted);
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 80px 40px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-inner { max-width: 680px; margin: 0 auto; }
+
+    .faq-list { margin-top: 40px; display: flex; flex-direction: column; gap: 0; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .faq-q { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+    .faq-a { font-size: 14px; color: var(--subtle); line-height: 1.7; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 48px 40px; text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-logo {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; margin-bottom: 10px; text-decoration: none;
+    }
+
+    .footer-tagline { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+
+    .footer-links {
+      display: flex; align-items: center; justify-content: center;
+      gap: 24px; margin-bottom: 24px; flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 13px; color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy { font-size: 12px; color: #334155; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="logo">
+      <div class="logo-mark">G</div>
+      <span class="logo-text">Gantt<span>OWN</span></span>
+    </a>
+    <div class="nav-right">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="mailto:hello@ownsuite.io" class="nav-link">Support</a>
+      <a href="#pricing" class="nav-cta">Get GanttOWN →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">✦ One-time purchase · No subscription</div>
+    <h1>Project scheduling software<br/><span>you actually own.</span></h1>
+    <p class="hero-sub">A fast, powerful Gantt chart app for Mac and Windows. Buy once, use forever. Your files stay on your machine — no cloud, no account, no monthly fee.</p>
+    <div class="hero-actions">
+      <a href="#pricing" class="btn-primary">Get GanttOWN →</a>
+      <a href="#features" class="btn-secondary">See features</a>
+    </div>
+    <div class="hero-note">Mac & Windows · Works on SharePoint & network drives · PDF & Excel export</div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Everything you need. Nothing you don't.</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🖱</span>
+        <div class="feature-title">Drag & Drop Scheduling</div>
+        <div class="feature-desc">Move and resize tasks visually. Dependencies cascade automatically when you shift dates.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">⚡</span>
+        <div class="feature-title">Critical Path</div>
+        <div class="feature-desc">Automatically highlights the tasks that determine your project end date — recalculated on every change.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">◆</span>
+        <div class="feature-title">Milestones</div>
+        <div class="feature-desc">Track key dates on the timeline. Flag overdue milestones and mark completions with a full audit trail.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📸</span>
+        <div class="feature-title">Baseline & Slip Tracking</div>
+        <div class="feature-desc">Snapshot your original schedule. Ghost bars and slip badges show exactly where you've drifted.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔒</span>
+        <div class="feature-title">Role-Based Access</div>
+        <div class="feature-desc">PM and member roles with password protection. Members can update progress and request date changes.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📄</span>
+        <div class="feature-title">PDF & Excel Export</div>
+        <div class="feature-desc">Print-ready PDF exports with critical path indicators. Excel exports include baselines, notes, and audit data.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📓</span>
+        <div class="feature-title">Project Log</div>
+        <div class="feature-desc">A shared running log for the whole team. PM messages are visually distinguished from member entries.</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🗂</span>
+        <div class="feature-title">Works Everywhere</div>
+        <div class="feature-desc">Open and save .gantt files on local drives, network shares, SharePoint, or OneDrive. No server required.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO -->
+  <section class="who">
+    <div class="who-inner">
+      <div class="section-label">Who It's For</div>
+      <h2 class="section-title">Built for teams tired of SaaS pricing</h2>
+      <div class="who-grid">
+        <div class="who-card">
+          <strong>🏗 Construction</strong>
+          <p>Track subcontractors, phases, and inspections without paying per seat every month.</p>
+        </div>
+        <div class="who-card">
+          <strong>💻 IT & Software</strong>
+          <p>Sprint planning and release schedules that live in your repo alongside your code.</p>
+        </div>
+        <div class="who-card">
+          <strong>📣 Marketing</strong>
+          <p>Campaign timelines and launch plans your whole team can view without needing an account.</p>
+        </div>
+        <div class="who-card">
+          <strong>🏢 Operations</strong>
+          <p>Any team that needs a shared schedule without the overhead of enterprise project software.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Pay once. Use forever.</h2>
+    <div class="pricing-grid">
+
+      <div class="plan-card">
+        <div>
+          <div class="plan-name">Solo</div>
+          <div class="plan-desc">For freelancers and independent PMs.</div>
+        </div>
+        <div>
+          <div class="plan-price">$49 <span>one-time</span></div>
+          <div class="plan-members">Up to 5 team members</div>
+        </div>
+        <ul class="plan-features">
+          <li>Full Gantt chart with drag & drop</li>
+          <li>Critical path & dependencies</li>
+          <li>Milestones & baseline tracking</li>
+          <li>PDF & Excel export</li>
+          <li>Project log & notes</li>
+          <li>Mac & Windows</li>
+        </ul>
+        <a href="https://ownsuite.lemonsqueezy.com" class="plan-cta outline">Buy Solo — $49</a>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="plan-badge">Most Popular</div>
+        <div>
+          <div class="plan-name">Team</div>
+          <div class="plan-desc">For small to mid-size project teams.</div>
+        </div>
+        <div>
+          <div class="plan-price">$149 <span>one-time</span></div>
+          <div class="plan-members">Up to 20 team members</div>
+        </div>
+        <ul class="plan-features">
+          <li>Everything in Solo</li>
+          <li>Up to 20 members with role-based access</li>
+          <li>Member inboxes & date change requests</li>
+          <li>PM approval workflow</li>
+          <li>Full audit log</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://ownsuite.lemonsqueezy.com" class="plan-cta">Buy Team — $149</a>
+      </div>
+
+      <div class="plan-card">
+        <div>
+          <div class="plan-name">Business</div>
+          <div class="plan-desc">For larger teams and organizations.</div>
+        </div>
+        <div>
+          <div class="plan-price">$299 <span>one-time</span></div>
+          <div class="plan-members">Up to 150 team members</div>
+        </div>
+        <ul class="plan-features">
+          <li>Everything in Team</li>
+          <li>Up to 150 members</li>
+          <li>Ideal for department-wide deployment</li>
+          <li>Multiple concurrent projects</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://ownsuite.lemonsqueezy.com" class="plan-cta outline">Buy Business — $299</a>
+      </div>
+
+    </div>
+    <div class="pricing-note">All purchases include free updates for 12 months · Secure checkout via Lemon Squeezy · Instant download after purchase</div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="faq-inner">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Does it really work without the internet?</div>
+          <div class="faq-a">Yes. GanttOWN is a native desktop app. Once installed it works completely offline. Your project files are saved locally — no cloud sync, no account required after activation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What does "one-time purchase" mean exactly?</div>
+          <div class="faq-a">You pay once and own the software. There are no monthly fees, no renewal charges, and no feature lockouts. Your purchase includes free updates for 12 months.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can my team collaborate on the same file?</div>
+          <div class="faq-a">Yes. Save your .gantt file to a shared network drive, SharePoint, or OneDrive. Team members open it directly — no server setup required. File locking prevents simultaneous edits.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What's the difference between the tiers?</div>
+          <div class="faq-a">The tiers differ only in the number of team members allowed per project file — 5 for Solo, 20 for Team, and 150 for Business. All features are included in every tier.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Mac or Windows?</div>
+          <div class="faq-a">Both. Your license key works on either platform. Download the installer for your OS after purchase.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if I need help?</div>
+          <div class="faq-a">Email us at hello@ownsuite.io. We're a small team and we actually respond.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="/" class="footer-logo">
+      <div class="logo-mark">G</div>
+      <span class="logo-text">Gantt<span>OWN</span></span>
+    </a>
+    <div class="footer-tagline">Your schedule. Your rules.</div>
+    <div class="footer-links">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://ownsuite.io">OwnSuite</a>
+      <a href="mailto:hello@ownsuite.io">hello@ownsuite.io</a>
+    </div>
+    <div class="footer-copy">© 2026 OwnSuite. GanttOWN is a product of OwnSuite. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
