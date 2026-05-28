@@ -417,106 +417,153 @@
   </section>
 
   <!-- SCREENSHOTS -->
-  <section style="padding:80px 40px;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <section id="screenshots" style="padding:80px 40px;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div style="max-width:1060px;margin:0 auto;">
       <div class="section-label">See It In Action</div>
       <h2 class="section-title">Built for real project teams</h2>
 
-      <!-- Hero screenshot -->
-      <div style="margin-bottom:48px;border-radius:12px;overflow:hidden;border:1px solid var(--border);box-shadow:0 24px 64px #000a;">
-        <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/Gantt%20Project%20With%20Milestones.png" alt="GanttOWN full Gantt chart with milestones" style="width:100%;display:block;"/>
+      <!-- Tabs -->
+      <div id="ss-tabs" style="display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:4px;margin-bottom:32px;flex-wrap:wrap;">
+        <button onclick="ssTab(0)" id="tab-0" style="flex:1;padding:8px 16px;border:none;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;background:var(--indigo);color:#fff;font-family:'Inter',sans-serif;white-space:nowrap;">🗓 Schedule</button>
+        <button onclick="ssTab(1)" id="tab-1" style="flex:1;padding:8px 16px;border:none;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);font-family:'Inter',sans-serif;white-space:nowrap;">👥 Collaboration</button>
+        <button onclick="ssTab(2)" id="tab-2" style="flex:1;padding:8px 16px;border:none;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);font-family:'Inter',sans-serif;white-space:nowrap;">✅ Approvals</button>
+        <button onclick="ssTab(3)" id="tab-3" style="flex:1;padding:8px 16px;border:none;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);font-family:'Inter',sans-serif;white-space:nowrap;">📓 Project Log</button>
+        <button onclick="ssTab(4)" id="tab-4" style="flex:1;padding:8px 16px;border:none;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);font-family:'Inter',sans-serif;white-space:nowrap;">🔑 Licensing</button>
       </div>
 
-      <!-- Schedule section -->
-      <div style="margin-bottom:56px;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--indigo);margin-bottom:8px;">Schedule</div>
-        <div style="font-size:20px;font-weight:800;margin-bottom:24px;">Your full project at a glance</div>
+      <!-- Tab panels -->
+      <div id="ss-panel-0">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/Full%20Gantt%20Project.png" alt="Full Gantt chart" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">Drag-and-drop tasks with dependency arrows and critical path highlighting</div>
+          <div style="grid-column:1/-1;">
+            <div onclick="ssLightbox('https://ganttown.com/Gantt%20Project%20With%20Milestones.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/Gantt%20Project%20With%20Milestones.png" alt="Gantt chart with milestones" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Full Gantt chart with milestones, dependency arrows, critical path, and today line — click to zoom</div>
           </div>
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/Task%20creation%20with%20status%20filled.png" alt="Task creation" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">Task editor with assignee, dates, progress, dependencies, and inline notes</div>
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/Full%20Gantt%20Project.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/Full%20Gantt%20Project.png" alt="Full Gantt project" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Drag-and-drop tasks with live dependency cascading</div>
+          </div>
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/Task%20creation%20with%20status%20filled.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/Task%20creation%20with%20status%20filled.png" alt="Task creation" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Task editor — assignee, dates, progress, dependencies, notes</div>
           </div>
         </div>
       </div>
 
-      <!-- Collaboration section -->
-      <div style="margin-bottom:56px;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--indigo);margin-bottom:8px;">Collaboration</div>
-        <div style="font-size:20px;font-weight:800;margin-bottom:24px;">PM and member workflows built in</div>
+      <div id="ss-panel-1" style="display:none;">
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/PM%20inbox%20feature.png" alt="PM inbox" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">PM inbox — see completed tasks, new notes, and pending approvals on login</div>
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/PM%20inbox%20feature.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/PM%20inbox%20feature.png" alt="PM inbox" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">PM inbox — completed tasks, new notes, pending approvals on login</div>
           </div>
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/Member%20inbox%20feature.png" alt="Member inbox" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">Member inbox — task summaries, PM messages, and date change responses</div>
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/Member%20inbox%20feature.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/Member%20inbox%20feature.png" alt="Member inbox" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Member inbox — your tasks, PM messages, resolved requests</div>
           </div>
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/New%20member%20inbox%20with%20activity.png" alt="Member inbox with activity" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">New activity flagged clearly — PM notes, new log entries, resolved requests</div>
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/New%20member%20inbox%20with%20activity.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/New%20member%20inbox%20with%20activity.png" alt="Member inbox with activity" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">New activity flagged — PM notes, log entries, resolved requests</div>
           </div>
         </div>
       </div>
 
-      <!-- Date change workflow -->
-      <div style="margin-bottom:56px;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--indigo);margin-bottom:8px;">Approval Workflow</div>
-        <div style="font-size:20px;font-weight:800;margin-bottom:24px;">Members request, PMs approve</div>
+      <div id="ss-panel-2" style="display:none;">
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/Requesting%20date%20change.png" alt="Requesting date change" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">Members submit date change requests with a reason — no direct edit access</div>
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/Requesting%20date%20change.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/Requesting%20date%20change.png" alt="Requesting date change" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Members submit date change requests with reason — no direct edit access</div>
           </div>
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/PM%20inbox%20with%20date%20change%20request.png" alt="PM inbox date change" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">PM sees pending requests on login with full context before approving</div>
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/PM%20inbox%20with%20date%20change%20request.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/PM%20inbox%20with%20date%20change%20request.png" alt="PM date change request" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">PM sees pending requests with full context before approving</div>
           </div>
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/PM%20approving%20date%20change%20with%20comment.png" alt="PM approving" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">PM approves or rejects with a comment — member sees the response in their inbox</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project log + milestones -->
-      <div style="margin-bottom:56px;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--indigo);margin-bottom:8px;">Visibility</div>
-        <div style="font-size:20px;font-weight:800;margin-bottom:24px;">Keep the whole team informed</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/Project%20Log%20with%20PM.png" alt="Project log" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">Shared project log — PM announcements styled distinctly from member entries</div>
-          </div>
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/Milestone%20completion.png" alt="Milestone completion" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">Milestones tracked on the timeline — mark complete with full audit trail</div>
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/PM%20approving%20date%20change%20with%20comment.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/PM%20approving%20date%20change%20with%20comment.png" alt="PM approving" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Approve or reject with a comment — member sees response in their inbox</div>
           </div>
         </div>
       </div>
 
-      <!-- License -->
-      <div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--indigo);margin-bottom:8px;">Licensing</div>
-        <div style="font-size:20px;font-weight:800;margin-bottom:24px;">Activate once, use forever</div>
+      <div id="ss-panel-3" style="display:none;">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/License%20Screen.png" alt="License activation" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">One-time license activation — enter your key and you're in, no account required</div>
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/Project%20Log%20with%20PM.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/Project%20Log%20with%20PM.png" alt="Project log" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Shared project log — PM announcements styled apart from member entries</div>
           </div>
-          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-            <img src="https://raw.githubusercontent.com/krisvfrazier/ganttown-site/main/After%20Password%20set.png" alt="After setup" style="width:100%;display:block;"/>
-            <div style="padding:12px 14px;font-size:12px;color:var(--muted);">Set your PM password and your project is locked, secured, and ready for your team</div>
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/Milestone%20completion.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/Milestone%20completion.png" alt="Milestone completion" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Milestones tracked on timeline — mark complete with full audit trail</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="ss-panel-4" style="display:none;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/License%20Screen.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/License%20Screen.png" alt="License screen" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">One-time license activation — enter your key, no account required</div>
+          </div>
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/After%20Password%20set.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/After%20Password%20set.png" alt="After password set" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Set PM password and your project is locked and ready for your team</div>
           </div>
         </div>
       </div>
 
     </div>
   </section>
+
+  <!-- Lightbox -->
+  <div id="ss-lightbox" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;background:#000000ee;z-index:1000;display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;">
+    <img id="ss-lightbox-img" src="" style="max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 32px 80px #000;"/>
+  </div>
+
+  <script>
+    function ssTab(n) {
+      for(let i=0;i<5;i++) {
+        const p = document.getElementById('ss-panel-'+i);
+        const t = document.getElementById('tab-'+i);
+        if(p) p.style.display = i===n ? 'block' : 'none';
+        if(t) {
+          t.style.background = i===n ? '#6366f1' : 'transparent';
+          t.style.color = i===n ? '#fff' : 'var(--muted)';
+        }
+      }
+    }
+    function ssLightbox(src) {
+      const lb = document.getElementById('ss-lightbox');
+      document.getElementById('ss-lightbox-img').src = src;
+      lb.style.display = 'flex';
+    }
+    document.getElementById('ss-lightbox').addEventListener('click', function() {
+      this.style.display = 'none';
+    });
+  </script>
 
   <!-- WHO -->
   <section class="who">
