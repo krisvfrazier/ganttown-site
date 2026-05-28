@@ -429,6 +429,8 @@
         <button onclick="ssTab(2)" id="tab-2" style="flex:1;padding:8px 16px;border:none;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);font-family:'Inter',sans-serif;white-space:nowrap;">✅ Approvals</button>
         <button onclick="ssTab(3)" id="tab-3" style="flex:1;padding:8px 16px;border:none;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);font-family:'Inter',sans-serif;white-space:nowrap;">📓 Project Log</button>
         <button onclick="ssTab(4)" id="tab-4" style="flex:1;padding:8px 16px;border:none;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);font-family:'Inter',sans-serif;white-space:nowrap;">🔑 Licensing</button>
+        <button onclick="ssTab(5)" id="tab-5" style="flex:1;padding:8px 16px;border:none;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);font-family:'Inter',sans-serif;white-space:nowrap;">📊 Dashboard</button>
+        <button onclick="ssTab(6)" id="tab-6" style="flex:1;padding:8px 16px;border:none;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);font-family:'Inter',sans-serif;white-space:nowrap;">🛡 Audit</button>
       </div>
 
       <!-- Tab panels -->
@@ -533,9 +535,29 @@
             <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Set PM password and your project is locked and ready for your team</div>
           </div>
         </div>
+      <div id="ss-panel-5" style="display:none;">
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;">
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/project%20dashboard%20status%20at%20a%20glance.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/project%20dashboard%20status%20at%20a%20glance.png" alt="Project dashboard" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Dashboard — total tasks, completion rate, schedule health, milestone status, and pending approvals at a glance</div>
+          </div>
+        </div>
       </div>
 
-    </div>
+      <div id="ss-panel-6" style="display:none;">
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;">
+          <div>
+            <div onclick="ssLightbox('https://ganttown.com/full%20audit%20viewing.png')" style="border-radius:10px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='var(--border)'">
+              <img src="https://ganttown.com/full%20audit%20viewing.png" alt="Full audit log" style="width:100%;display:block;"/>
+            </div>
+            <div style="padding:10px 0 4px;font-size:12px;color:var(--muted);">Full audit log — every action timestamped and attributed. Failed logins, date changes, OOB acknowledgements, completions. PM-only access.</div>
+          </div>
+        </div>
+      </div>
+
+      </div>
   </section>
 
   <!-- Lightbox -->
@@ -545,7 +567,7 @@
 
   <script>
     function ssTab(n) {
-      for(let i=0;i<5;i++) {
+      for(let i=0;i<7;i++) {
         const p = document.getElementById('ss-panel-'+i);
         const t = document.getElementById('tab-'+i);
         if(p) p.style.display = i===n ? 'block' : 'none';
