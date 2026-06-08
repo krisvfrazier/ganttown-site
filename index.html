@@ -159,6 +159,43 @@
     .footer-links a:hover { color:var(--text); }
     .footer-copy { font-size:12px; color:#334155; }
 
+    /* ── VERSION HISTORY ── */
+    .changelog { padding:80px 40px; }
+    .changelog-inner { max-width:680px; margin:0 auto; }
+    .timeline { position:relative; margin-top:48px; padding-left:56px; }
+    .timeline::before {
+      content:''; position:absolute; left:20px; top:8px; bottom:8px; width:2px;
+      background:linear-gradient(180deg,var(--indigo) 0%,var(--violet) 70%,var(--border) 100%);
+    }
+    .tl-item { position:relative; padding-bottom:30px; }
+    .tl-item:last-child { padding-bottom:0; }
+    .tl-node {
+      position:absolute; left:7px; top:3px; width:14px; height:14px; border-radius:50%;
+      background:var(--surface); border:2px solid var(--violet); z-index:1;
+    }
+    .tl-version { font-size:14px; font-weight:700; color:var(--text); display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .tl-version small { font-size:12px; font-weight:500; color:var(--muted); }
+    .tl-desc { font-size:13px; color:var(--subtle); line-height:1.65; margin-top:5px; }
+    .tl-tag { font-size:10px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; padding:2px 8px; border-radius:20px; background:linear-gradient(135deg,var(--indigo),var(--violet)); color:#fff; }
+
+    /* Milestone (big circle with a line off to the right) */
+    .tl-milestone .tl-node {
+      left:-1px; top:-1px; width:30px; height:30px; border:none;
+      background:linear-gradient(135deg,var(--indigo),var(--violet));
+      box-shadow:0 0 0 4px var(--bg),0 0 24px rgba(99,102,241,0.4);
+    }
+    .tl-milestone .tl-node::after {
+      content:''; position:absolute; left:30px; top:50%; transform:translateY(-50%);
+      width:22px; height:2px; background:linear-gradient(90deg,var(--violet),transparent);
+    }
+    .tl-milestone .tl-version { font-size:18px; font-weight:800; }
+
+    /* Future / upcoming milestone */
+    .tl-future .tl-node { background:var(--surface); border:2px dashed var(--violet); box-shadow:0 0 0 4px var(--bg); }
+    .tl-future .tl-node::after { background:linear-gradient(90deg,var(--border),transparent); }
+    .tl-future .tl-version { color:var(--subtle); }
+    .tl-future .tl-tag { background:transparent; border:1px solid var(--violet); color:#a5b4fc; }
+
     @media(max-width:768px) {
       nav { padding:0 20px; }
       .hero,.features,.pricing,.faq,.screenshots { padding-left:20px; padding-right:20px; }
@@ -181,6 +218,7 @@
     <div class="nav-right">
       <a href="#features" class="nav-link">Features</a>
       <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#changelog" class="nav-link">Updates</a>
       <a href="mailto:hello@ownsuite.io" class="nav-link">Support</a>
       <a href="#pricing" class="nav-cta">Get GanttOWN →</a>
     </div>
@@ -495,6 +533,69 @@
         <div class="faq-item"><div class="faq-q">What's the difference between the tiers?</div><div class="faq-a">The tiers differ in both team size and collaboration features. Solo supports up to 5 members and is ideal for individual PMs. Team (up to 20) and Business (up to 150) unlock the full collaboration suite — PM and member roles with separate passwords, member inboxes, date change request and approval workflows, PM-to-member messaging, project log, and a full audit trail.</div></div>
         <div class="faq-item"><div class="faq-q">Mac or Windows?</div><div class="faq-a">Mac is available now. Windows is in active development — join the waitlist and we'll email you the day it ships. Your license key will work on either platform, so buying today covers you for both.</div></div>
         <div class="faq-item"><div class="faq-q">What if I need help?</div><div class="faq-a">Email us at hello@ownsuite.io. We're a small team and we actually respond.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="changelog" id="changelog">
+    <div class="changelog-inner">
+      <div class="section-label">Version History</div>
+      <h2 class="section-title">Where GanttOWN is at</h2>
+
+      <!-- Edit the descriptions below to match your real release notes for each patch. -->
+      <div class="timeline">
+
+        <!-- 1.0 — Launch milestone -->
+        <div class="tl-item tl-milestone">
+          <div class="tl-node"></div>
+          <div class="tl-version">1.0 <span class="tl-tag">Launch</span></div>
+          <div class="tl-desc">The first public release of GanttOWN — full drag-and-drop Gantt scheduling, critical path, milestones, baselines, role-based access, the audit trail, and PDF &amp; Excel export.</div>
+        </div>
+
+        <!-- Point releases within 1.0 -->
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-version">1.0.1</div>
+          <div class="tl-desc">Early post-launch fixes and stability improvements.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-version">1.0.2</div>
+          <div class="tl-desc">Scheduling and dependency-cascade refinements.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-version">1.0.3</div>
+          <div class="tl-desc">PDF &amp; Excel export polish.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-version">1.0.4</div>
+          <div class="tl-desc">Inbox and approval-workflow improvements.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-version">1.0.5</div>
+          <div class="tl-desc">Workday calendar and date-handling fixes.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-version">1.0.6</div>
+          <div class="tl-desc">Licensing and activation refinements.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-version">1.0.7 <span class="tl-tag">Current</span></div>
+          <div class="tl-desc">The latest release — the most stable and polished GanttOWN yet.</div>
+        </div>
+
+        <!-- 1.1 — Future landmark milestone -->
+        <div class="tl-item tl-milestone tl-future">
+          <div class="tl-node"></div>
+          <div class="tl-version">1.1 <span class="tl-tag">Coming soon</span></div>
+          <div class="tl-desc">The next landmark update — bigger features on the roadmap. Down the road, but on the way.</div>
+        </div>
+
       </div>
     </div>
   </section>
