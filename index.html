@@ -162,37 +162,43 @@
     /* ── VERSION HISTORY ── */
     .changelog { padding:80px 40px; }
     .changelog-inner { max-width:680px; margin:0 auto; }
-    .timeline { position:relative; margin-top:48px; padding-left:56px; }
+    .timeline { position:relative; margin-top:48px; }
+    /* the vertical line — circles sit centered on this (x = 24px) */
     .timeline::before {
-      content:''; position:absolute; left:20px; top:8px; bottom:8px; width:2px;
-      background:linear-gradient(180deg,var(--indigo) 0%,var(--violet) 70%,var(--border) 100%);
+      content:''; position:absolute; left:23px; top:10px; bottom:10px; width:2px;
+      background:linear-gradient(180deg,var(--indigo) 0%,var(--violet) 72%,var(--border) 100%);
     }
-    .tl-item { position:relative; padding-bottom:30px; }
+    .tl-item { position:relative; padding:0 0 34px 92px; min-height:20px; }
     .tl-item:last-child { padding-bottom:0; }
+
+    /* small circle, centered on the line */
     .tl-node {
-      position:absolute; left:7px; top:3px; width:14px; height:14px; border-radius:50%;
-      background:var(--surface); border:2px solid var(--violet); z-index:1;
+      position:absolute; left:16px; top:0; width:16px; height:16px; border-radius:50%;
+      background:var(--surface); border:2px solid var(--violet); z-index:2;
     }
-    .tl-version { font-size:14px; font-weight:700; color:var(--text); display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-    .tl-version small { font-size:12px; font-weight:500; color:var(--muted); }
+    /* dotted connector running from the circle across to the text */
+    .tl-item::before {
+      content:''; position:absolute; left:38px; top:9px; width:46px; height:0;
+      border-top:2px dotted #475569;
+    }
+
+    .tl-version { font-size:14px; font-weight:700; color:var(--text); display:flex; align-items:center; gap:8px; flex-wrap:wrap; line-height:1.3; }
     .tl-desc { font-size:13px; color:var(--subtle); line-height:1.65; margin-top:5px; }
     .tl-tag { font-size:10px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; padding:2px 8px; border-radius:20px; background:linear-gradient(135deg,var(--indigo),var(--violet)); color:#fff; }
 
-    /* Milestone (big circle with a line off to the right) */
+    /* Milestone — big circle, also centered on the line */
+    .tl-milestone { padding-bottom:40px; }
     .tl-milestone .tl-node {
-      left:-1px; top:-1px; width:30px; height:30px; border:none;
+      left:8px; top:-8px; width:32px; height:32px; border:none;
       background:linear-gradient(135deg,var(--indigo),var(--violet));
-      box-shadow:0 0 0 4px var(--bg),0 0 24px rgba(99,102,241,0.4);
+      box-shadow:0 0 0 4px var(--bg),0 0 20px rgba(99,102,241,0.35);
     }
-    .tl-milestone .tl-node::after {
-      content:''; position:absolute; left:30px; top:50%; transform:translateY(-50%);
-      width:22px; height:2px; background:linear-gradient(90deg,var(--violet),transparent);
-    }
+    .tl-milestone::before { left:46px; top:5px; width:38px; border-top-color:var(--violet); }
     .tl-milestone .tl-version { font-size:18px; font-weight:800; }
 
     /* Future / upcoming milestone */
     .tl-future .tl-node { background:var(--surface); border:2px dashed var(--violet); box-shadow:0 0 0 4px var(--bg); }
-    .tl-future .tl-node::after { background:linear-gradient(90deg,var(--border),transparent); }
+    .tl-future::before { border-top-color:#475569; }
     .tl-future .tl-version { color:var(--subtle); }
     .tl-future .tl-tag { background:transparent; border:1px solid var(--violet); color:#a5b4fc; }
 
