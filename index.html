@@ -73,6 +73,24 @@
     .nav-cta { background:var(--indigo); color:#fff; font-size:13px; font-weight:600; padding:7px 16px; border-radius:7px; text-decoration:none; transition:opacity 0.2s; }
     .nav-cta:hover { opacity:0.85; }
 
+    /* Mobile nav — hamburger + dropdown menu (hidden on desktop) */
+    .nav-toggle { display:none; flex-direction:column; justify-content:center; gap:5px; width:40px; height:40px; padding:8px; background:none; border:none; cursor:pointer; }
+    .nav-toggle span { display:block; width:22px; height:2px; border-radius:2px; background:var(--text); transition:transform 0.25s, opacity 0.2s; }
+    .nav-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity:0; }
+    .nav-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display:none; position:fixed; top:60px; left:0; right:0; z-index:99;
+      flex-direction:column; padding:6px 20px 14px;
+      background:rgba(10,15,30,0.97); backdrop-filter:blur(12px); border-bottom:1px solid var(--border);
+      transform:translateY(-10px); opacity:0; visibility:hidden; pointer-events:none;
+      transition:opacity 0.22s, transform 0.22s, visibility 0.22s;
+    }
+    .mobile-menu.open { transform:translateY(0); opacity:1; visibility:visible; pointer-events:auto; }
+    .mobile-link { padding:15px 4px; font-size:15px; color:var(--text); text-decoration:none; border-bottom:1px solid var(--border); }
+    .mobile-link:last-child { border-bottom:none; }
+    .mobile-cta { margin-top:10px; text-align:center; font-weight:600; color:#fff; background:var(--indigo); border-radius:8px; border-bottom:none; }
+
     .hero { padding:148px 40px 90px; text-align:center; position:relative; overflow:hidden; }
     .hero::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:900px; height:500px; background:radial-gradient(ellipse,rgba(99,102,241,0.13) 0%,transparent 70%); pointer-events:none; }
     .hero-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.25); border-radius:20px; padding:5px 14px; font-size:12px; font-weight:600; color:#a5b4fc; margin-bottom:28px; letter-spacing:0.5px; }
@@ -207,7 +225,9 @@
       nav { padding:0 20px; }
       .hero,.features,.pricing,.faq,.screenshots { padding-left:20px; padding-right:20px; }
       .ss-grid-2,.ss-grid-3 { grid-template-columns:1fr; }
-      .nav-right .nav-link { display:none; }
+      .nav-right { display:none; }
+      .nav-toggle { display:flex; }
+      .mobile-menu { display:flex; }
     }
     @media(max-width:480px) {
       #waitlist-form { flex-direction:column; }
@@ -229,7 +249,19 @@
       <a href="mailto:hello@ownsuite.io" class="nav-link">Support</a>
       <a href="#pricing" class="nav-cta">Get GanttOWN →</a>
     </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features" class="mobile-link">Features</a>
+    <a href="#screenshots" class="mobile-link">Screenshots</a>
+    <a href="#pricing" class="mobile-link">Pricing</a>
+    <a href="#changelog" class="mobile-link">Updates</a>
+    <a href="mailto:hello@ownsuite.io" class="mobile-link">Support</a>
+    <a href="#pricing" class="mobile-link mobile-cta">Get GanttOWN →</a>
+  </div>
 
   <section class="hero">
     <div class="hero-eyebrow">✦ One-time purchase · No subscription</div>
@@ -619,6 +651,23 @@
   </footer>
 
 <script>
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', function() {
+      const open = mobileMenu.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open);
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+
     const wlForm = document.getElementById('waitlist-form');
     const wlBtn  = document.getElementById('waitlist-btn');
     wlForm.addEventListener('submit', async function(e) {
