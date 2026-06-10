@@ -94,7 +94,7 @@
 
     .hero { padding:148px 40px 90px; text-align:center; position:relative; overflow:hidden; }
     .hero::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:900px; height:500px; background:radial-gradient(ellipse,rgba(99,102,241,0.13) 0%,transparent 70%); pointer-events:none; }
-    .hero-logo { position:relative; width:96px; height:96px; display:block; margin:0 auto 28px; filter:drop-shadow(0 10px 30px rgba(99,102,241,0.35)); }
+    .hero-logo { position:relative; width:96px; height:96px; display:block; margin:0 auto 14px; filter:drop-shadow(0 10px 30px rgba(99,102,241,0.35)); }
     .hero-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.25); border-radius:20px; padding:5px 14px; font-size:12px; font-weight:600; color:#a5b4fc; margin-bottom:28px; letter-spacing:0.5px; }
     .hero h1 { font-size:clamp(36px,5.5vw,62px); font-weight:800; letter-spacing:-1.5px; line-height:1.1; margin-bottom:20px; }
     .hero h1 span { background:linear-gradient(135deg,var(--indigo),var(--violet)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -248,7 +248,7 @@
     @media(max-width:480px) {
       #waitlist-form { flex-direction:column; }
       #waitlist-form button { width:100%; }
-      .hero-logo { width:72px; height:72px; margin-bottom:22px; }
+      .hero-logo { width:72px; height:72px; margin-bottom:12px; }
     }
   </style>
 
@@ -302,7 +302,6 @@
 
   <section class="hero">
     <img src="/logo-mark.svg" alt="GanttOWN" class="hero-logo"/>
-    <div class="hero-eyebrow">✦ One-time purchase · No subscription</div>
     <h1>The Gantt chart app you<br/><span>buy once and own.</span></h1>
     <p class="hero-sub">A fast, powerful desktop Gantt chart app. Buy once, use forever. No subscription, no cloud, no monthly fee. Works fully offline, with your files on your own machine.</p>
     <div class="hero-actions">
