@@ -1,0 +1,24 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Mark: rounded square background -->
+  <rect x="10" y="10" width="80" height="80" rx="18" fill="url(#grad)"/>
+
+  <!-- Gantt bars (stylized) -->
+  <rect x="20" y="30" width="52" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
+  <rect x="20" y="30" width="36" height="8" rx="4" fill="rgba(255,255,255,0.85)"/>
+
+  <rect x="26" y="45" width="44" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
+  <rect x="26" y="45" width="24" height="8" rx="4" fill="rgba(255,255,255,0.85)"/>
+
+  <rect x="32" y="60" width="36" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
+  <rect x="32" y="60" width="14" height="8" rx="4" fill="rgba(255,255,255,0.85)"/>
+
+  <!-- Milestone diamond -->
+  <polygon points="70,30 76,38 70,46 64,38" fill="#f59e0b"/>
+</svg>
