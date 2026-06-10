@@ -95,22 +95,20 @@
     .hero { padding:148px 40px 90px; text-align:center; position:relative; overflow:hidden; }
     .hero::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:900px; height:500px; background:radial-gradient(ellipse,rgba(99,102,241,0.13) 0%,transparent 70%); pointer-events:none; }
     .hero-logo-wrap { position:relative; display:inline-block; margin:0 auto 14px; }
-    .hero-logo { position:relative; z-index:1; width:96px; height:96px; display:block; filter:drop-shadow(0 10px 30px rgba(99,102,241,0.35)); }
-    /* brighter, double dotted ring pulsing out from the mark (echoes the changelog milestone) */
-    .hero-logo-wrap::before, .hero-logo-wrap::after {
-      content:''; position:absolute; inset:-12px; border-radius:28px;
-      border:2px dotted #6366f1; pointer-events:none;
-      animation:hero-pulse 7s ease-out infinite;
+    .hero-logo { position:relative; z-index:1; width:96px; height:96px; display:block; filter:drop-shadow(0 8px 22px rgba(99,102,241,0.28)); }
+    /* soft glow halo behind the mark that gently breathes in and out */
+    .hero-logo-wrap::before {
+      content:''; position:absolute; inset:-34%; z-index:0; border-radius:50%; pointer-events:none;
+      background:radial-gradient(circle, rgba(99,102,241,0.55) 0%, rgba(139,92,246,0.28) 42%, transparent 70%);
+      filter:blur(16px);
+      animation:hero-glow 5.5s ease-in-out infinite;
     }
-    .hero-logo-wrap::after { animation-delay:3.5s; }
-    @keyframes hero-pulse {
-      0%   { transform:scale(0.96); opacity:0.5; }
-      70%  { transform:scale(1.18); opacity:0; }
-      100% { transform:scale(1.18); opacity:0; }
+    @keyframes hero-glow {
+      0%, 100% { opacity:0.35; transform:scale(0.9); }
+      50%      { opacity:0.95; transform:scale(1.08); }
     }
     @media (prefers-reduced-motion:reduce) {
-      .hero-logo-wrap::before { animation:none; opacity:0.45; }
-      .hero-logo-wrap::after  { animation:none; opacity:0; }
+      .hero-logo-wrap::before { animation:none; opacity:0.5; }
     }
     .hero-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.25); border-radius:20px; padding:5px 14px; font-size:12px; font-weight:600; color:#a5b4fc; margin-bottom:28px; letter-spacing:0.5px; }
     .hero h1 { font-size:clamp(36px,5.5vw,62px); font-weight:800; letter-spacing:-1.5px; line-height:1.1; margin-bottom:20px; }
