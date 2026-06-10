@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback — Report a Bug or Share an Idea | GanttOWN</title>
+  <meta name="description" content="Found a bug, have a suggestion, or just want to share a thought about GanttOWN? Send us your feedback — we read every message."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <meta property="og:title" content="Feedback — GanttOWN"/>
+  <meta property="og:description" content="Report a bug, share a suggestion, or leave a comment about GanttOWN. We read every message."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://ganttown.com/feedback.html"/>
+  <meta property="og:image" content="https://ganttown.com/Gantt%20Project%20With%20Milestones.png"/>
+  <link rel="canonical" href="https://ganttown.com/feedback.html"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:      #0a0f1e;
+      --surface: #111827;
+      --border:  #1e293b;
+      --text:    #f1f5f9;
+      --muted:   #64748b;
+      --subtle:  #94a3b8;
+      --indigo:  #6366f1;
+      --violet:  #8b5cf6;
+      --emerald: #10b981;
+      --amber:   #f59e0b;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; line-height:1.6; }
+
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      background:rgba(10,15,30,0.88); backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+      padding:0 40px; height:60px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .logo-mark { width:32px; height:32px; background:linear-gradient(135deg,var(--indigo),var(--violet)); border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; color:#fff; }
+    .logo-text { font-weight:700; font-size:16px; color:var(--text); }
+    .logo-text span { color:var(--violet); }
+    .nav-right { display:flex; align-items:center; gap:24px; }
+    .nav-link { font-size:13px; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+    .nav-link:hover { color:var(--text); }
+    .nav-cta { background:var(--indigo); color:#fff; font-size:13px; font-weight:600; padding:7px 16px; border-radius:7px; text-decoration:none; transition:opacity 0.2s; }
+    .nav-cta:hover { opacity:0.85; }
+
+    .nav-toggle { display:none; flex-direction:column; justify-content:center; gap:5px; width:40px; height:40px; padding:8px; background:none; border:none; cursor:pointer; }
+    .nav-toggle span { display:block; width:22px; height:2px; border-radius:2px; background:var(--text); transition:transform 0.25s, opacity 0.2s; }
+    .nav-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity:0; }
+    .nav-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display:none; position:fixed; top:60px; left:0; right:0; z-index:99;
+      flex-direction:column; padding:6px 20px 14px;
+      background:rgba(10,15,30,0.97); backdrop-filter:blur(12px); border-bottom:1px solid var(--border);
+      transform:translateY(-10px); opacity:0; visibility:hidden; pointer-events:none;
+      transition:opacity 0.22s, transform 0.22s, visibility 0.22s;
+    }
+    .mobile-menu.open { transform:translateY(0); opacity:1; visibility:visible; pointer-events:auto; }
+    .mobile-link { padding:15px 4px; font-size:15px; color:var(--text); text-decoration:none; border-bottom:1px solid var(--border); }
+    .mobile-link:last-child { border-bottom:none; }
+    .mobile-cta { margin-top:10px; text-align:center; font-weight:600; color:#fff; background:var(--indigo); border-radius:8px; border-bottom:none; }
+
+    .section-label { text-align:center; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--indigo); margin-bottom:12px; }
+
+    /* Feedback page */
+    .fb-wrap { max-width:620px; margin:0 auto; padding:148px 40px 90px; }
+    .fb-head { text-align:center; margin-bottom:44px; }
+    .fb-head h1 { font-size:clamp(30px,4.5vw,44px); font-weight:800; letter-spacing:-1px; line-height:1.12; margin-bottom:16px; }
+    .fb-head h1 span { background:linear-gradient(135deg,var(--indigo),var(--violet)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .fb-head p { font-size:16px; color:var(--subtle); max-width:480px; margin:0 auto; line-height:1.75; }
+
+    .fb-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:32px; }
+
+    .fb-field { margin-bottom:22px; }
+    .fb-field:last-of-type { margin-bottom:26px; }
+    .fb-label { display:block; font-size:13px; font-weight:600; color:var(--text); margin-bottom:9px; }
+    .fb-label .opt { color:var(--muted); font-weight:400; }
+
+    .fb-types { display:flex; gap:10px; flex-wrap:wrap; }
+    .fb-type { flex:1; min-width:120px; }
+    .fb-type input { position:absolute; opacity:0; pointer-events:none; }
+    .fb-type label {
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      padding:13px 14px; border:1px solid var(--border); border-radius:10px;
+      background:#0f172a; color:var(--subtle); font-size:14px; font-weight:600;
+      cursor:pointer; transition:border-color 0.18s, color 0.18s, background 0.18s;
+    }
+    .fb-type label:hover { border-color:#334155; color:var(--text); }
+    .fb-type input:checked + label { border-color:var(--indigo); background:rgba(99,102,241,0.12); color:#c7d2fe; }
+    .fb-type input:focus-visible + label { outline:2px solid var(--indigo); outline-offset:2px; }
+
+    .fb-input, .fb-textarea {
+      width:100%; background:#1e293b; border:1px solid #334155; border-radius:10px;
+      padding:12px 16px; color:var(--text); font-size:14px; font-family:'Inter',sans-serif;
+      outline:none; transition:border-color 0.18s;
+    }
+    .fb-input:focus, .fb-textarea:focus { border-color:var(--indigo); }
+    .fb-input::placeholder, .fb-textarea::placeholder { color:#475569; }
+    .fb-textarea { resize:vertical; min-height:150px; line-height:1.7; }
+
+    .fb-submit {
+      width:100%; background:linear-gradient(135deg,var(--indigo),var(--violet)); color:#fff;
+      font-size:15px; font-weight:700; padding:14px 22px; border-radius:10px; border:none;
+      cursor:pointer; font-family:'Inter',sans-serif; transition:opacity 0.2s, transform 0.2s;
+    }
+    .fb-submit:hover { opacity:0.92; transform:translateY(-1px); }
+    .fb-submit:disabled { opacity:0.6; cursor:default; transform:none; }
+
+    .fb-note { text-align:center; font-size:12px; color:var(--muted); margin-top:18px; }
+    .fb-note a { color:var(--subtle); }
+
+    .fb-success {
+      background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.35); border-radius:12px;
+      padding:28px 24px; text-align:center; color:#6ee7b7; font-size:15px; font-weight:600; line-height:1.6;
+    }
+    .fb-success .big { display:block; font-size:30px; margin-bottom:8px; }
+
+    .fb-error { color:#fca5a5; font-size:13px; margin-top:14px; text-align:center; min-height:18px; }
+
+    footer { padding:48px 40px; text-align:center; border-top:1px solid var(--border); }
+    .footer-logo { display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:10px; text-decoration:none; }
+    .footer-tagline { font-size:13px; color:var(--muted); margin-bottom:20px; }
+    .footer-links { display:flex; align-items:center; justify-content:center; gap:24px; margin-bottom:24px; flex-wrap:wrap; }
+    .footer-links a { font-size:13px; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+    .footer-links a:hover { color:var(--text); }
+    .footer-copy { font-size:12px; color:#334155; }
+
+    @media(max-width:768px) {
+      nav { padding:0 20px; }
+      .fb-wrap { padding-left:20px; padding-right:20px; }
+      .nav-right { display:none; }
+      .nav-toggle { display:flex; }
+      .mobile-menu { display:flex; }
+    }
+    @media(max-width:480px) {
+      .fb-card { padding:24px 20px; }
+      .fb-type { min-width:0; }
+    }
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1946957405988758');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1946957405988758&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">
+      <div class="logo-mark">G</div>
+      <span class="logo-text">Gantt<span>OWN</span></span>
+    </a>
+    <div class="nav-right">
+      <a href="/#features" class="nav-link">Features</a>
+      <a href="/#pricing" class="nav-link">Pricing</a>
+      <a href="/#changelog" class="nav-link">Updates</a>
+      <a href="mailto:hello@ownsuite.io" class="nav-link">Support</a>
+      <a href="/#pricing" class="nav-cta">Get GanttOWN →</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#features" class="mobile-link">Features</a>
+    <a href="/#screenshots" class="mobile-link">Screenshots</a>
+    <a href="/#pricing" class="mobile-link">Pricing</a>
+    <a href="/#changelog" class="mobile-link">Updates</a>
+    <a href="mailto:hello@ownsuite.io" class="mobile-link">Support</a>
+    <a href="/#pricing" class="mobile-link mobile-cta">Get GanttOWN →</a>
+  </div>
+
+  <main class="fb-wrap">
+    <div class="fb-head">
+      <div class="section-label">Feedback</div>
+      <h1>Found a bug? Got an idea?<br/><span>Tell us about it.</span></h1>
+      <p>We're a small team and we read every single message. Report a bug, suggest a feature, or just share a thought — it all helps make GanttOWN better.</p>
+    </div>
+
+    <div class="fb-card">
+      <!-- Replace the form ID below with your Formspree "Feedback" form endpoint. -->
+      <form id="feedback-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <div class="fb-field">
+          <span class="fb-label">What kind of feedback is this?</span>
+          <div class="fb-types">
+            <div class="fb-type">
+              <input type="radio" id="type-bug" name="type" value="Bug" checked/>
+              <label for="type-bug">🐞 Bug</label>
+            </div>
+            <div class="fb-type">
+              <input type="radio" id="type-suggestion" name="type" value="Suggestion"/>
+              <label for="type-suggestion">💡 Suggestion</label>
+            </div>
+            <div class="fb-type">
+              <input type="radio" id="type-comment" name="type" value="Comment"/>
+              <label for="type-comment">💬 Comment</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="fb-field">
+          <label class="fb-label" for="fb-message">Your message</label>
+          <textarea class="fb-textarea" id="fb-message" name="message" placeholder="What happened, what you expected, or what you'd love to see…" required></textarea>
+        </div>
+
+        <div class="fb-field">
+          <label class="fb-label" for="fb-email">Email <span class="opt">(optional — so we can follow up)</span></label>
+          <input class="fb-input" type="email" id="fb-email" name="email" placeholder="you@company.com"/>
+        </div>
+
+        <!-- Honeypot anti-spam field; bots fill it, humans don't see it. -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+        <input type="hidden" name="_subject" value="New GanttOWN feedback"/>
+
+        <button type="submit" class="fb-submit" id="fb-submit">Send feedback →</button>
+        <div class="fb-error" id="fb-error" role="alert"></div>
+      </form>
+      <div class="fb-note">Prefer email? Reach us anytime at <a href="mailto:hello@ownsuite.io">hello@ownsuite.io</a></div>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/" class="footer-logo">
+      <div class="logo-mark">G</div>
+      <span class="logo-text">Gantt<span>OWN</span></span>
+    </a>
+    <div class="footer-tagline">Your schedule. Your rules.</div>
+    <div class="footer-links">
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="https://ownsuite.io">OwnSuite</a>
+      <a href="https://ownsuite.io/deactivate">Manage Licenses</a>
+      <a href="mailto:hello@ownsuite.io">hello@ownsuite.io</a>
+    </div>
+    <div class="footer-copy">© 2026 OwnSuite. GanttOWN is a product of OwnSuite. All rights reserved.</div>
+  </footer>
+
+<script>
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', function() {
+      const open = mobileMenu.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open);
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+
+    const fbForm  = document.getElementById('feedback-form');
+    const fbBtn   = document.getElementById('fb-submit');
+    const fbError = document.getElementById('fb-error');
+    fbForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      fbError.textContent = '';
+      fbBtn.textContent = 'Sending…';
+      fbBtn.disabled = true;
+      try {
+        const res = await fetch(fbForm.action, {
+          method: 'POST',
+          body: new FormData(fbForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if(res.ok) {
+          if(window.fbq) fbq('track', 'Lead', { content_name: 'Feedback' });
+          fbForm.innerHTML = '<div class="fb-success"><span class="big">✓</span>Thank you — your feedback is on its way to us. We read every message.</div>';
+        } else {
+          let msg = 'Something went wrong. Please try again, or email hello@ownsuite.io.';
+          try {
+            const data = await res.json();
+            if(data && data.errors && data.errors.length) msg = data.errors.map(function(x){return x.message;}).join(', ');
+          } catch(_) {}
+          fbError.textContent = msg;
+          fbBtn.textContent = 'Send feedback →';
+          fbBtn.disabled = false;
+        }
+      } catch(err) {
+        fbError.textContent = 'Network error. Please try again, or email hello@ownsuite.io.';
+        fbBtn.textContent = 'Send feedback →';
+        fbBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
