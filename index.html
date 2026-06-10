@@ -99,14 +99,14 @@
     /* brighter, double dotted ring pulsing out from the mark (echoes the changelog milestone) */
     .hero-logo-wrap::before, .hero-logo-wrap::after {
       content:''; position:absolute; inset:-12px; border-radius:28px;
-      border:2px dotted #a5b4fc; pointer-events:none;
-      animation:hero-pulse 4.8s ease-out infinite;
+      border:2px dotted #6366f1; pointer-events:none;
+      animation:hero-pulse 7s ease-out infinite;
     }
-    .hero-logo-wrap::after { animation-delay:2.4s; }
+    .hero-logo-wrap::after { animation-delay:3.5s; }
     @keyframes hero-pulse {
-      0%   { transform:scale(0.94); opacity:0.85; }
-      70%  { transform:scale(1.45); opacity:0; }
-      100% { transform:scale(1.45); opacity:0; }
+      0%   { transform:scale(0.96); opacity:0.5; }
+      70%  { transform:scale(1.18); opacity:0; }
+      100% { transform:scale(1.18); opacity:0; }
     }
     @media (prefers-reduced-motion:reduce) {
       .hero-logo-wrap::before { animation:none; opacity:0.45; }
