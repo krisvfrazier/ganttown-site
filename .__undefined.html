@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/svg+xml" href="/logo-mark.svg"/>
-  <title>Gantt Chart Software You Buy Once, No Subscription | GanttOWN</title>
-  <meta name="description" content="Buy once, own it. A one-time purchase desktop Gantt chart app for Mac. No subscription, no cloud, works offline. Critical path, milestones, PDF export."/>
+  <title>Gantt Chart Software You Buy Once — No Subscription | GanttOWN</title>
+  <meta name="description" content="Buy once, own it. A one-time purchase desktop Gantt chart app for Mac — no subscription, no cloud, works offline. Critical path, milestones, PDF export."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="GanttOWN: The Gantt Chart App You Buy Once and Own"/>
+  <meta property="og:title" content="GanttOWN — The Gantt Chart App You Buy Once and Own"/>
   <meta property="og:description" content="A one-time purchase desktop Gantt chart app. No subscription, no cloud, works offline. Critical path, milestones, team collaboration, and PDF export."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://ganttown.com"/>
   <meta property="og:image" content="https://ganttown.com/Gantt%20Project%20With%20Milestones.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="GanttOWN: The Gantt Chart App You Buy Once and Own"/>
+  <meta name="twitter:title" content="GanttOWN — The Gantt Chart App You Buy Once and Own"/>
   <meta name="twitter:description" content="One-time purchase desktop Gantt chart app. No subscription, no cloud, works offline."/>
   <meta name="twitter:image" content="https://ganttown.com/Gantt%20Project%20With%20Milestones.png"/>
   <link rel="canonical" href="https://ganttown.com"/>
@@ -28,7 +27,7 @@
     "name": "GanttOWN",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "macOS",
-    "description": "One-time purchase desktop Gantt chart software for project scheduling. No subscription, works offline. Critical path, milestones, team collaboration, and PDF export.",
+    "description": "One-time purchase desktop Gantt chart software for project scheduling — no subscription, works offline. Critical path, milestones, team collaboration, and PDF export.",
     "offers": {
       "@type": "AggregateOffer",
       "lowPrice": "49",
@@ -65,7 +64,7 @@
       display:flex; align-items:center; justify-content:space-between;
     }
     .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
-    .logo-mark { width:30px; height:30px; display:block; }
+    .logo-mark { width:32px; height:32px; background:linear-gradient(135deg,var(--indigo),var(--violet)); border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; color:#fff; }
     .logo-text { font-weight:700; font-size:16px; color:var(--text); }
     .logo-text span { color:var(--violet); }
     .nav-right { display:flex; align-items:center; gap:24px; }
@@ -74,7 +73,7 @@
     .nav-cta { background:var(--indigo); color:#fff; font-size:13px; font-weight:600; padding:7px 16px; border-radius:7px; text-decoration:none; transition:opacity 0.2s; }
     .nav-cta:hover { opacity:0.85; }
 
-    /* Mobile nav: hamburger + dropdown menu (hidden on desktop) */
+    /* Mobile nav — hamburger + dropdown menu (hidden on desktop) */
     .nav-toggle { display:none; flex-direction:column; justify-content:center; gap:5px; width:40px; height:40px; padding:8px; background:none; border:none; cursor:pointer; }
     .nav-toggle span { display:block; width:22px; height:2px; border-radius:2px; background:var(--text); transition:transform 0.25s, opacity 0.2s; }
     .nav-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
@@ -94,24 +93,8 @@
 
     .hero { padding:148px 40px 90px; text-align:center; position:relative; overflow:hidden; }
     .hero::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:900px; height:500px; background:radial-gradient(ellipse,rgba(99,102,241,0.13) 0%,transparent 70%); pointer-events:none; }
-    .hero-logo-wrap { position:relative; display:inline-block; margin:0 auto 14px; }
-    .hero-logo { position:relative; z-index:1; width:96px; height:96px; display:block; filter:drop-shadow(0 8px 22px rgba(99,102,241,0.28)); }
-    /* soft glow halo behind the mark that gently breathes in and out */
-    .hero-logo-wrap::before {
-      content:''; position:absolute; inset:-24%; z-index:0; border-radius:50%; pointer-events:none;
-      background:radial-gradient(circle, rgba(79,70,229,0.7) 0%, rgba(109,40,217,0.38) 45%, transparent 72%);
-      filter:blur(13px);
-      animation:hero-glow 5.5s ease-in-out infinite;
-    }
-    @keyframes hero-glow {
-      0%, 100% { opacity:0.4; transform:scale(0.92); }
-      50%      { opacity:0.9; transform:scale(1.06); }
-    }
-    @media (prefers-reduced-motion:reduce) {
-      .hero-logo-wrap::before { animation:none; opacity:0.5; }
-    }
     .hero-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.25); border-radius:20px; padding:5px 14px; font-size:12px; font-weight:600; color:#a5b4fc; margin-bottom:28px; letter-spacing:0.5px; }
-    .hero h1 { font-size:clamp(28px,5.5vw,62px); font-weight:800; letter-spacing:-1.5px; line-height:1.1; margin-bottom:20px; }
+    .hero h1 { font-size:clamp(36px,5.5vw,62px); font-weight:800; letter-spacing:-1.5px; line-height:1.1; margin-bottom:20px; }
     .hero h1 span { background:linear-gradient(135deg,var(--indigo),var(--violet)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
     .hero-sub { font-size:clamp(15px,2vw,18px); color:var(--subtle); max-width:520px; margin:0 auto 40px; line-height:1.75; }
     .hero-actions { display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:48px; }
@@ -130,57 +113,22 @@
     .feature-title { font-size:14px; font-weight:700; margin-bottom:6px; }
     .feature-desc { font-size:13px; color:var(--subtle); line-height:1.6; }
 
-    /* ── SCREENSHOTS (vertical picker + slide-in gallery) ── */
+    /* ── SCREENSHOTS ── */
     .screenshots { padding:80px 40px; background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-    .screenshots-inner { max-width:1100px; margin:0 auto; }
-    .ss-explorer { display:grid; grid-template-columns:248px 1fr; gap:28px; margin-top:44px; align-items:start; }
-
-    /* vertical category list */
-    .ss-list { display:flex; flex-direction:column; gap:6px; }
-    .ss-item {
-      display:flex; align-items:center; gap:12px; width:100%; text-align:left;
-      background:var(--bg); border:1px solid var(--border); border-radius:10px;
-      padding:13px 14px; cursor:pointer; color:var(--subtle);
-      font-family:'Inter',sans-serif; font-size:14px; font-weight:600;
-      transition:border-color 0.18s,color 0.18s,background 0.18s;
-    }
-    .ss-item:hover { border-color:rgba(99,102,241,0.5); color:var(--text); }
-    .ss-item.active {
-      background:linear-gradient(135deg,rgba(99,102,241,0.16),rgba(139,92,246,0.10));
-      border-color:var(--indigo); color:var(--text);
-    }
-    .ss-item-icon { font-size:18px; flex-shrink:0; width:22px; text-align:center; }
-    .ss-item-label { flex:1; }
-    .ss-item-arrow { font-size:14px; color:var(--muted); opacity:0; transform:translateX(-4px); transition:opacity 0.18s,transform 0.18s; }
-    .ss-item.active .ss-item-arrow { opacity:1; transform:translateX(0); color:var(--indigo); }
-
-    /* detail / slide-in panel */
-    .ss-detail { background:var(--bg); border:1px solid var(--border); border-radius:14px; padding:24px; min-height:440px; overflow:hidden; }
-    .ss-detail-inner { animation:ss-slide 0.42s cubic-bezier(0.16,1,0.3,1); }
-    @keyframes ss-slide { from { opacity:0; transform:translateX(26px); } to { opacity:1; transform:translateX(0); } }
-    @media (prefers-reduced-motion:reduce) { .ss-detail-inner { animation:none; } }
-    .ss-detail-title { font-size:20px; font-weight:800; letter-spacing:-0.3px; display:flex; align-items:center; gap:10px; }
-    .ss-detail-desc { font-size:14px; color:var(--subtle); line-height:1.7; margin-top:10px; max-width:700px; }
-
-    /* gallery */
-    .ss-gallery { margin-top:22px; }
-    .ss-stage { position:relative; border-radius:12px; overflow:hidden; border:1px solid var(--border); background:var(--surface); cursor:zoom-in; }
-    .ss-stage img { width:100%; display:block; }
-    .ss-nav { position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px; border-radius:50%; border:none; background:rgba(10,15,30,0.7); backdrop-filter:blur(6px); color:#fff; font-size:20px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.2s,background 0.2s; z-index:2; }
-    .ss-stage:hover .ss-nav { opacity:1; }
-    .ss-nav:hover { background:var(--indigo); }
-    .ss-prev { left:12px; }
-    .ss-next { right:12px; }
-    .ss-zoom-hint { position:absolute; bottom:12px; right:12px; background:rgba(10,15,30,0.7); backdrop-filter:blur(6px); color:#cbd5e1; font-size:11px; font-weight:600; padding:5px 10px; border-radius:6px; opacity:0; transition:opacity 0.2s; z-index:2; pointer-events:none; }
-    .ss-stage:hover .ss-zoom-hint { opacity:1; }
-    .ss-gallery-foot { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-top:14px; }
-    .ss-caption { font-size:13px; color:var(--muted); line-height:1.55; flex:1; }
-    .ss-counter { font-size:12px; font-weight:700; color:var(--subtle); white-space:nowrap; padding-top:1px; }
-    .ss-thumbs { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; }
-    .ss-thumb { width:66px; height:46px; border-radius:6px; overflow:hidden; border:1px solid var(--border); cursor:pointer; padding:0; background:none; opacity:0.55; transition:opacity 0.18s,border-color 0.18s; }
-    .ss-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
-    .ss-thumb:hover { opacity:0.85; }
-    .ss-thumb.active { opacity:1; border-color:var(--indigo); }
+    .screenshots-inner { max-width:1060px; margin:0 auto; }
+    .ss-tabs { display:flex; gap:4px; background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:4px; margin-bottom:32px; overflow-x:auto; }
+    .ss-tab { flex:1; padding:8px 14px; border:none; border-radius:7px; font-size:12px; font-weight:600; cursor:pointer; background:transparent; color:var(--muted); font-family:'Inter',sans-serif; white-space:nowrap; transition:background 0.15s,color 0.15s; }
+    .ss-tab.active { background:var(--indigo); color:#fff; }
+    .ss-panel { display:none; }
+    .ss-panel.active { display:block; }
+    .ss-grid-1 { display:grid; grid-template-columns:1fr; gap:16px; }
+    .ss-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .ss-grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+    .ss-hero { grid-column:1/-1; }
+    .ss-img-wrap { border-radius:10px; overflow:hidden; border:1px solid var(--border); cursor:zoom-in; transition:border-color 0.2s; }
+    .ss-img-wrap:hover { border-color:var(--indigo); }
+    .ss-img-wrap img { width:100%; display:block; }
+    .ss-caption { padding:10px 0 4px; font-size:12px; color:var(--muted); }
 
     /* ── LIGHTBOX ── */
     .lightbox { display:none; position:fixed; inset:0; background:#000000ee; z-index:1000; align-items:center; justify-content:center; padding:40px; cursor:zoom-out; }
@@ -234,7 +182,7 @@
     .changelog-inner { max-width:680px; margin:0 auto; }
     .changelog-note { margin-top:40px; padding-top:28px; border-top:1px solid var(--border); text-align:center; font-size:14px; color:var(--muted); }
     .timeline { position:relative; margin-top:48px; }
-    /* the vertical line; circles sit centered on this (x = 24px) */
+    /* the vertical line — circles sit centered on this (x = 24px) */
     .timeline::before {
       content:''; position:absolute; left:23px; top:10px; bottom:10px; width:2px;
       background:linear-gradient(180deg,var(--indigo) 0%,var(--violet) 72%,var(--border) 100%);
@@ -257,26 +205,12 @@
     .tl-desc { font-size:13px; color:var(--subtle); line-height:1.65; margin-top:5px; }
     .tl-tag { font-size:10px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; padding:2px 8px; border-radius:20px; background:linear-gradient(135deg,var(--indigo),var(--violet)); color:#fff; }
 
-    /* Milestone: big circle, also centered on the line */
+    /* Milestone — big circle, also centered on the line */
     .tl-milestone { padding-bottom:40px; }
     .tl-milestone .tl-node {
       left:8px; top:-8px; width:32px; height:32px; border:none;
       background:linear-gradient(135deg,var(--indigo),var(--violet));
       box-shadow:0 0 0 4px var(--bg),0 0 20px rgba(99,102,241,0.35);
-    }
-    /* gently pulsing dotted outline around the milestone circle */
-    .tl-milestone .tl-node::after {
-      content:''; position:absolute; inset:-6px; border-radius:50%;
-      border:2px dotted var(--violet);
-      animation:tl-pulse 2.8s ease-out infinite;
-    }
-    @keyframes tl-pulse {
-      0%   { transform:scale(0.92); opacity:0.65; }
-      70%  { transform:scale(1.55); opacity:0; }
-      100% { transform:scale(1.55); opacity:0; }
-    }
-    @media (prefers-reduced-motion:reduce) {
-      .tl-milestone .tl-node::after { animation:none; opacity:0.5; }
     }
     .tl-milestone::before { left:46px; top:5px; width:38px; border-top-color:var(--violet); }
     .tl-milestone .tl-version { font-size:18px; font-weight:800; }
@@ -290,14 +224,7 @@
     @media(max-width:768px) {
       nav { padding:0 20px; }
       .hero,.features,.pricing,.faq,.screenshots { padding-left:20px; padding-right:20px; }
-      /* stack explorer; category list becomes a horizontal chip strip */
-      .ss-explorer { grid-template-columns:1fr; gap:16px; }
-      .ss-list { flex-direction:row; overflow-x:auto; gap:8px; padding-bottom:4px; -webkit-overflow-scrolling:touch; }
-      .ss-item { flex-direction:column; min-width:92px; text-align:center; gap:6px; padding:11px 10px; font-size:12px; }
-      .ss-item-arrow { display:none; }
-      .ss-detail { min-height:0; padding:18px; }
-      .ss-nav { opacity:1; } /* arrows always visible on touch */
-      .ss-zoom-hint { display:none; }
+      .ss-grid-2,.ss-grid-3 { grid-template-columns:1fr; }
       .nav-right { display:none; }
       .nav-toggle { display:flex; }
       .mobile-menu { display:flex; }
@@ -305,41 +232,20 @@
     @media(max-width:480px) {
       #waitlist-form { flex-direction:column; }
       #waitlist-form button { width:100%; }
-      .hero-logo-wrap { margin-bottom:12px; }
-      .hero-logo { width:72px; height:72px; }
     }
   </style>
-
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1946957405988758');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1946957405988758&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
   <nav>
     <a href="/" class="logo">
-      <img src="/logo-mark.svg" alt="" class="logo-mark"/>
+      <div class="logo-mark">G</div>
       <span class="logo-text">Gantt<span>OWN</span></span>
     </a>
     <div class="nav-right">
       <a href="#features" class="nav-link">Features</a>
       <a href="#pricing" class="nav-link">Pricing</a>
       <a href="#changelog" class="nav-link">Updates</a>
-      <a href="/feedback.html" class="nav-link">Feedback</a>
       <a href="mailto:hello@ownsuite.io" class="nav-link">Support</a>
       <a href="#pricing" class="nav-cta">Get GanttOWN →</a>
     </div>
@@ -353,17 +259,14 @@
     <a href="#screenshots" class="mobile-link">Screenshots</a>
     <a href="#pricing" class="mobile-link">Pricing</a>
     <a href="#changelog" class="mobile-link">Updates</a>
-    <a href="/feedback.html" class="mobile-link">Feedback</a>
     <a href="mailto:hello@ownsuite.io" class="mobile-link">Support</a>
     <a href="#pricing" class="mobile-link mobile-cta">Get GanttOWN →</a>
   </div>
 
   <section class="hero">
-    <span class="hero-logo-wrap">
-      <img src="/logo-mark.svg" alt="GanttOWN" class="hero-logo"/>
-    </span>
+    <div class="hero-eyebrow">✦ One-time purchase · No subscription</div>
     <h1>The Gantt chart app you<br/><span>buy once and own.</span></h1>
-    <p class="hero-sub">A fast, powerful desktop Gantt chart app. Buy once, use forever. No subscription, no cloud, no monthly fee. Works fully offline, with your files on your own machine.</p>
+    <p class="hero-sub">A fast, powerful desktop Gantt chart app. Buy once, use forever — no subscription, no cloud, no monthly fee. Works fully offline, with your files on your own machine.</p>
     <div class="hero-actions">
       <a href="#pricing" class="btn-primary">Get GanttOWN →</a>
       <a href="#features" class="btn-secondary">See features</a>
@@ -376,17 +279,17 @@
     <h2 class="section-title">Everything you need. Nothing you don't.</h2>
     <div class="features-grid">
       <div class="feature-card"><span class="feature-icon">🖱</span><div class="feature-title">Drag &amp; Drop Scheduling</div><div class="feature-desc">Move and resize tasks visually. Dependencies cascade automatically when you shift dates.</div></div>
-      <div class="feature-card"><span class="feature-icon">⚡</span><div class="feature-title">Critical Path</div><div class="feature-desc">Automatically highlights the tasks that determine your project end date, recalculated on every change.</div></div>
+      <div class="feature-card"><span class="feature-icon">⚡</span><div class="feature-title">Critical Path</div><div class="feature-desc">Automatically highlights the tasks that determine your project end date — recalculated on every change.</div></div>
       <div class="feature-card"><span class="feature-icon">◆</span><div class="feature-title">Milestones</div><div class="feature-desc">Track key dates on the timeline. Flag overdue milestones and mark completions with a full audit trail.</div></div>
       <div class="feature-card"><span class="feature-icon">📸</span><div class="feature-title">Baseline &amp; Slip Tracking</div><div class="feature-desc">Snapshot your original schedule. Ghost bars and slip badges show exactly where you've drifted.</div></div>
       <div class="feature-card"><span class="feature-icon">🔒</span><div class="feature-title">Role-Based Access</div><div class="feature-desc">PM and member roles with password protection. Members can update progress and request date changes.</div></div>
       <div class="feature-card"><span class="feature-icon">📄</span><div class="feature-title">PDF &amp; Excel Export</div><div class="feature-desc">Print-ready PDF exports with critical path indicators. Excel exports include baselines, notes, and audit data.</div></div>
       <div class="feature-card"><span class="feature-icon">📓</span><div class="feature-title">Project Log</div><div class="feature-desc">A shared running log for the whole team. PM messages are visually distinguished from member entries.</div></div>
-      <div class="feature-card"><span class="feature-icon">📥</span><div class="feature-title">PM &amp; Member Inboxes</div><div class="feature-desc">On login, PMs and members each get a personal inbox: new notes, completed tasks, pending approvals, and resolved date requests, all in one place. See what changed without digging through the chart.</div></div>
-      <div class="feature-card"><span class="feature-icon">📊</span><div class="feature-title">Status Dashboard</div><div class="feature-desc">A one-screen read on project health: total tasks, completion rate, schedule health, milestone status, and pending approvals at a glance. Know exactly where things stand without scrolling the chart.</div></div>
-      <div class="feature-card"><span class="feature-icon">🛡</span><div class="feature-title">Full Audit Trail</div><div class="feature-desc">Every action timestamped and attributed: date changes, approvals, completions, even failed logins. A complete, PM-only record of who did what, and when.</div></div>
-      <div class="feature-card"><span class="feature-icon">📅</span><div class="feature-title">Workday Calendar</div><div class="feature-desc">Schedule around real working days: turn weekends off and mark your own holidays and non-working days. Durations and dependency cascades respect your calendar, not just the raw dates.</div></div>
-      <div class="feature-card"><span class="feature-icon">🗂</span><div class="feature-title">Works Everywhere</div><div class="feature-desc">A self-hosted, offline Gantt chart: open and save .gantt files on local drives, network shares, SharePoint, or OneDrive. No server required.</div></div>
+      <div class="feature-card"><span class="feature-icon">📥</span><div class="feature-title">PM &amp; Member Inboxes</div><div class="feature-desc">On login, PMs and members each get a personal inbox — new notes, completed tasks, pending approvals, and resolved date requests, all in one place. See what changed without digging through the chart.</div></div>
+      <div class="feature-card"><span class="feature-icon">📊</span><div class="feature-title">Status Dashboard</div><div class="feature-desc">A one-screen read on project health — total tasks, completion rate, schedule health, milestone status, and pending approvals at a glance. Know exactly where things stand without scrolling the chart.</div></div>
+      <div class="feature-card"><span class="feature-icon">🛡</span><div class="feature-title">Full Audit Trail</div><div class="feature-desc">Every action timestamped and attributed — date changes, approvals, completions, even failed logins. A complete, PM-only record of who did what, and when.</div></div>
+      <div class="feature-card"><span class="feature-icon">📅</span><div class="feature-title">Workday Calendar</div><div class="feature-desc">Schedule around real working days — turn weekends off and mark your own holidays and non-working days. Durations and dependency cascades respect your calendar, not just the raw dates.</div></div>
+      <div class="feature-card"><span class="feature-icon">🗂</span><div class="feature-title">Works Everywhere</div><div class="feature-desc">A self-hosted, offline Gantt chart — open and save .gantt files on local drives, network shares, SharePoint, or OneDrive. No server required.</div></div>
     </div>
   </section>
 
@@ -395,10 +298,161 @@
     <div class="screenshots-inner">
       <div class="section-label">See It In Action</div>
       <h2 class="section-title">Built for real project teams</h2>
-      <div class="ss-explorer">
-        <div class="ss-list" id="ssList" role="tablist" aria-label="Feature areas"></div>
-        <div class="ss-detail" id="ssDetail" role="tabpanel"></div>
+
+      <div class="ss-tabs">
+        <button class="ss-tab active" onclick="ssTab(this,0)">🗓 Schedule</button>
+        <button class="ss-tab" onclick="ssTab(this,1)">👥 Collaboration</button>
+        <button class="ss-tab" onclick="ssTab(this,2)">✅ Approvals</button>
+        <button class="ss-tab" onclick="ssTab(this,3)">📓 Project Log</button>
+        <button class="ss-tab" onclick="ssTab(this,4)">🔑 Licensing</button>
+        <button class="ss-tab" onclick="ssTab(this,5)">📊 Dashboard</button>
+        <button class="ss-tab" onclick="ssTab(this,6)">🛡 Audit</button>
       </div>
+
+      <!-- Panel 0: Schedule -->
+      <div class="ss-panel active" id="ss-panel-0">
+        <div class="ss-grid-2">
+          <div class="ss-hero">
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/Gantt%20Project%20With%20Milestones.png')">
+              <img src="https://ganttown.com/Gantt%20Project%20With%20Milestones.png" alt="Gantt chart with milestones"/>
+            </div>
+            <div class="ss-caption">Full Gantt chart with milestones, dependency arrows, critical path, and today line — click to zoom</div>
+          </div>
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/Full%20Gantt%20Project.png')">
+              <img src="https://ganttown.com/Full%20Gantt%20Project.png" alt="Full Gantt project"/>
+            </div>
+            <div class="ss-caption">Drag-and-drop tasks with live dependency cascading</div>
+          </div>
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/Task%20creation%20with%20status%20filled.png')">
+              <img src="https://ganttown.com/Task%20creation%20with%20status%20filled.png" alt="Task creation"/>
+            </div>
+            <div class="ss-caption">Task editor — assignee, dates, progress, dependencies, notes</div>
+          </div>
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/Full%20PDF%20Export%20With%20Styling.png')">
+              <img src="https://ganttown.com/Full%20PDF%20Export%20With%20Styling.png" alt="PDF export"/>
+            </div>
+            <div class="ss-caption">PDF export — print-ready with full styling, critical path indicators, and baseline data intact</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 1: Collaboration -->
+      <div class="ss-panel" id="ss-panel-1">
+        <div class="ss-grid-3">
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/PM%20inbox%20feature.png')">
+              <img src="https://ganttown.com/PM%20inbox%20feature.png" alt="PM inbox"/>
+            </div>
+            <div class="ss-caption">PM inbox — completed tasks, new notes, pending approvals on login</div>
+          </div>
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/Member%20inbox%20feature.png')">
+              <img src="https://ganttown.com/Member%20inbox%20feature.png" alt="Member inbox"/>
+            </div>
+            <div class="ss-caption">Member inbox — your tasks, PM messages, resolved requests</div>
+          </div>
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/New%20member%20inbox%20with%20activity.png')">
+              <img src="https://ganttown.com/New%20member%20inbox%20with%20activity.png" alt="Member inbox with activity"/>
+            </div>
+            <div class="ss-caption">New activity flagged — PM notes, log entries, resolved requests</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Approvals -->
+      <div class="ss-panel" id="ss-panel-2">
+        <div class="ss-grid-3">
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/Requesting%20date%20change.png')">
+              <img src="https://ganttown.com/Requesting%20date%20change.png" alt="Requesting date change"/>
+            </div>
+            <div class="ss-caption">Members submit date change requests with reason — no direct edit access</div>
+          </div>
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/PM%20inbox%20with%20date%20change%20request.png')">
+              <img src="https://ganttown.com/PM%20inbox%20with%20date%20change%20request.png" alt="PM date change request"/>
+            </div>
+            <div class="ss-caption">PM sees pending requests with full context before approving</div>
+          </div>
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/PM%20approving%20date%20change%20with%20comment.png')">
+              <img src="https://ganttown.com/PM%20approving%20date%20change%20with%20comment.png" alt="PM approving"/>
+            </div>
+            <div class="ss-caption">Approve or reject with a comment — member sees response in their inbox</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Project Log -->
+      <div class="ss-panel" id="ss-panel-3">
+        <div class="ss-grid-2">
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/Project%20Log%20with%20PM.png')">
+              <img src="https://ganttown.com/Project%20Log%20with%20PM.png" alt="Project log"/>
+            </div>
+            <div class="ss-caption">Shared project log — PM announcements styled apart from member entries</div>
+          </div>
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/Milestone%20completion.png')">
+              <img src="https://ganttown.com/Milestone%20completion.png" alt="Milestone completion"/>
+            </div>
+            <div class="ss-caption">Milestones tracked on timeline — mark complete with full audit trail</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: Licensing -->
+      <div class="ss-panel" id="ss-panel-4">
+        <div class="ss-grid-2">
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/License%20Screen.png')">
+              <img src="https://ganttown.com/License%20Screen.png" alt="License screen"/>
+            </div>
+            <div class="ss-caption">One-time license activation — enter your key, no account required</div>
+          </div>
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/After%20Password%20set.png')">
+              <img src="https://ganttown.com/After%20Password%20set.png" alt="After password set"/>
+            </div>
+            <div class="ss-caption">Set PM password and your project is locked and ready for your team</div>
+          </div>
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/Exsisting%20Projects%20Login.png')">
+              <img src="https://ganttown.com/Exsisting%20Projects%20Login.png" alt="Project login screen"/>
+            </div>
+            <div class="ss-caption">Existing projects are password protected — only the PM and assigned team members can open them</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 5: Dashboard -->
+      <div class="ss-panel" id="ss-panel-5">
+        <div class="ss-grid-1">
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/project%20dashboard%20status%20at%20a%20glance.png')">
+              <img src="https://ganttown.com/project%20dashboard%20status%20at%20a%20glance.png" alt="Project dashboard"/>
+            </div>
+            <div class="ss-caption">Dashboard — total tasks, completion rate, schedule health, milestone status, and pending approvals at a glance</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 6: Audit -->
+      <div class="ss-panel" id="ss-panel-6">
+        <div class="ss-grid-1">
+          <div>
+            <div class="ss-img-wrap" onclick="ssLight('https://ganttown.com/full%20audit%20viewing.png')">
+              <img src="https://ganttown.com/full%20audit%20viewing.png" alt="Full audit log"/>
+            </div>
+            <div class="ss-caption">Full audit log — every action timestamped and attributed. Failed logins, date changes, OOB acknowledgements, completions. PM-only access.</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -408,145 +462,16 @@
   </div>
 
   <script>
-    const SS_BASE = 'https://ganttown.com/';
-    const SS_DATA = [
-      {
-        icon:'🗓', name:'Schedule',
-        desc:'Build your entire project on a drag-and-drop timeline with dependencies, critical path, and milestones. Move one task and everything downstream recalculates instantly, right through to the PDF export.',
-        shots:[
-          { src:'Gantt Project With Milestones.png', cap:'Full Gantt chart with milestones, dependency arrows, critical path, and today line' },
-          { src:'Full Gantt Project.png', cap:'Drag-and-drop tasks with live dependency cascading' },
-          { src:'Task creation with status filled.png', cap:'Task editor: assignee, dates, progress, dependencies, and notes' },
-          { src:'Full PDF Export With Styling.png', cap:'PDF export: print-ready with full styling, critical path, and baseline data intact' },
-        ],
-      },
-      {
-        icon:'👥', name:'Collaboration',
-        desc:'Every PM and member gets a personal inbox the moment they log in. Completed tasks, new notes, and pending items are waiting, so nobody has to dig through the chart to see what changed.',
-        shots:[
-          { src:'PM inbox feature.png', cap:'PM inbox: completed tasks, new notes, and pending approvals on login' },
-          { src:'Member inbox feature.png', cap:'Member inbox: your tasks, PM messages, and resolved requests' },
-          { src:'New member inbox with activity.png', cap:'New activity flagged: PM notes, log entries, and resolved requests' },
-        ],
-      },
-      {
-        icon:'✅', name:'Approvals',
-        desc:'Members request date changes with a reason instead of editing the schedule directly. The PM reviews each request in full context, then approves or rejects it with a comment.',
-        shots:[
-          { src:'Requesting date change.png', cap:'Members submit date change requests with a reason, no direct edit access' },
-          { src:'PM inbox with date change request.png', cap:'PM sees pending requests with full context before approving' },
-          { src:'PM approving date change with comment.png', cap:'Approve or reject with a comment; the member sees the response in their inbox' },
-        ],
-      },
-      {
-        icon:'📓', name:'Project Log',
-        desc:'A shared running journal keeps the whole team on the same page. PM announcements are styled apart from member entries so the important updates always stand out.',
-        shots:[
-          { src:'Project Log with PM.png', cap:'Shared project log: PM announcements styled apart from member entries' },
-          { src:'Milestone completion.png', cap:'Milestones tracked on the timeline; mark complete with a full audit trail' },
-        ],
-      },
-      {
-        icon:'🔑', name:'Licensing',
-        desc:'Activate once with your license key, no account or sign-up required. Set a PM password and your project is locked and ready for the team to open.',
-        shots:[
-          { src:'License Screen.png', cap:'One-time license activation: enter your key, no account required' },
-          { src:'After Password set.png', cap:'Set a PM password and your project is locked and ready for your team' },
-          { src:'Exsisting Projects Login.png', cap:'Existing projects are password protected: only the PM and assigned members can open them' },
-        ],
-      },
-      {
-        icon:'📊', name:'Dashboard',
-        desc:'One screen gives you the health of the whole project at a glance. Total tasks, completion rate, schedule health, milestone status, and pending approvals, with no scrolling.',
-        shots:[
-          { src:'project dashboard status at a glance.png', cap:'Dashboard: total tasks, completion rate, schedule health, milestone status, and pending approvals at a glance' },
-        ],
-      },
-      {
-        icon:'🛡', name:'Audit',
-        desc:'Every action is timestamped and attributed, from date changes and approvals down to failed logins. The PM-only audit log is a complete record of who did what, and when.',
-        shots:[
-          { src:'full audit viewing.png', cap:'Full audit log: failed logins, date changes, acknowledgements, and completions, all attributed. PM-only access.' },
-        ],
-      },
-    ];
-
-    const ssUrl = s => SS_BASE + encodeURIComponent(s);
-    let ssActive = 0, ssShot = 0;
-
-    function ssRenderList() {
-      document.getElementById('ssList').innerHTML = SS_DATA.map((d,i) => `
-        <button class="ss-item${i===0?' active':''}" role="tab" aria-selected="${i===0}" onclick="ssSelect(${i})">
-          <span class="ss-item-icon">${d.icon}</span>
-          <span class="ss-item-label">${d.name}</span>
-          <span class="ss-item-arrow">→</span>
-        </button>`).join('');
+    function ssTab(btn, n) {
+      document.querySelectorAll('.ss-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.ss-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('ss-panel-' + n).classList.add('active');
     }
-
-    function ssSelect(i) {
-      ssActive = i; ssShot = 0;
-      document.querySelectorAll('.ss-item').forEach((el,n) => {
-        const on = n === i;
-        el.classList.toggle('active', on);
-        el.setAttribute('aria-selected', on);
-      });
-      ssRenderDetail();
-    }
-
-    function ssRenderDetail() {
-      const d = SS_DATA[ssActive];
-      const multi = d.shots.length > 1;
-      const cur = d.shots[ssShot];
-      document.getElementById('ssDetail').innerHTML = `
-        <div class="ss-detail-inner">
-          <div class="ss-detail-title">${d.icon} ${d.name}</div>
-          <div class="ss-detail-desc">${d.desc}</div>
-          <div class="ss-gallery">
-            <div class="ss-stage" onclick="ssZoom()">
-              ${multi ? `<button class="ss-nav ss-prev" aria-label="Previous" onclick="event.stopPropagation();ssStep(-1)">‹</button>` : ''}
-              <img id="ssStageImg" src="${ssUrl(cur.src)}" alt="${d.name} screenshot"/>
-              ${multi ? `<button class="ss-nav ss-next" aria-label="Next" onclick="event.stopPropagation();ssStep(1)">›</button>` : ''}
-              <span class="ss-zoom-hint">⤢ Click to enlarge</span>
-            </div>
-            <div class="ss-gallery-foot">
-              <div class="ss-caption" id="ssCap">${cur.cap}</div>
-              ${multi ? `<div class="ss-counter" id="ssCount">${ssShot+1} / ${d.shots.length}</div>` : ''}
-            </div>
-            ${multi ? `<div class="ss-thumbs">${d.shots.map((s,n) => `
-              <button class="ss-thumb${n===ssShot?' active':''}" aria-label="View screenshot ${n+1}" onclick="ssGo(${n})">
-                <img src="${ssUrl(s.src)}" alt=""/>
-              </button>`).join('')}</div>` : ''}
-          </div>
-        </div>`;
-    }
-
-    function ssUpdateStage() {
-      const d = SS_DATA[ssActive], cur = d.shots[ssShot];
-      document.getElementById('ssStageImg').src = ssUrl(cur.src);
-      document.getElementById('ssCap').textContent = cur.cap;
-      const ct = document.getElementById('ssCount');
-      if (ct) ct.textContent = (ssShot+1) + ' / ' + d.shots.length;
-      document.querySelectorAll('.ss-thumb').forEach((el,n) => el.classList.toggle('active', n===ssShot));
-    }
-
-    function ssStep(dir) {
-      const len = SS_DATA[ssActive].shots.length;
-      ssShot = (ssShot + dir + len) % len;
-      ssUpdateStage();
-    }
-    function ssGo(n) { ssShot = n; ssUpdateStage(); }
-    function ssZoom() { ssLight(ssUrl(SS_DATA[ssActive].shots[ssShot].src)); }
-
     function ssLight(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').classList.add('open');
     }
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('open');
-    });
-
-    ssRenderList();
-    ssRenderDetail();
   </script>
 
   <section class="who">
@@ -567,7 +492,7 @@
     <h2 class="section-title">Pay once. Use forever.</h2>
     <div class="pricing-grid">
       <div class="plan-card">
-        <div><div class="plan-name">Solo</div><div class="plan-desc">For freelancers and small teams who just want to schedule, with no roles and no approvals.</div></div>
+        <div><div class="plan-name">Solo</div><div class="plan-desc">For freelancers and small teams who just want to schedule — no roles, no approvals.</div></div>
         <div><div class="plan-price">$49 <span>one-time</span></div><div class="plan-members">Up to 5 team members</div></div>
         <ul class="plan-features">
           <li>Full Gantt chart with drag &amp; drop</li>
@@ -575,10 +500,10 @@
           <li>Milestones &amp; baseline tracking</li>
           <li>PDF &amp; Excel export</li>
           <li>Task notes &amp; comments</li>
-          <li>Up to 5 members: everyone edits directly, no approvals</li>
+          <li>Up to 5 members — everyone edits directly, no approvals</li>
           <li>Lifetime bug &amp; security fixes (no new features)</li>
         </ul>
-        <a href="https://ownsuite.lemonsqueezy.com/checkout/buy/e66848c3-dbbf-4571-9018-b065b22429f0" class="plan-cta outline">Buy Solo · $49</a>
+        <a href="https://ownsuite.lemonsqueezy.com/checkout/buy/e66848c3-dbbf-4571-9018-b065b22429f0" class="plan-cta outline">Buy Solo — $49</a>
       </div>
       <div class="plan-card featured">
         <div class="plan-badge">Most Popular</div>
@@ -588,15 +513,15 @@
           <li>Everything in Solo</li>
           <li>Up to 20 members with role-based access</li>
           <li>PM &amp; member roles with separate passwords</li>
-          <li>Member inboxes: task summaries on login</li>
+          <li>Member inboxes — task summaries on login</li>
           <li>Date change requests &amp; PM approval workflow</li>
           <li>PM-to-member messaging via task notes</li>
-          <li>Project log: shared running team journal</li>
+          <li>Project log — shared running team journal</li>
           <li>Full audit log of every action</li>
           <li>Future feature updates included</li>
           <li>Priority support</li>
         </ul>
-        <a href="https://ownsuite.lemonsqueezy.com/checkout/buy/1584eb13-4577-4c6a-91d6-1d60cedde1fe" class="plan-cta">Buy Team · $149</a>
+        <a href="https://ownsuite.lemonsqueezy.com/checkout/buy/1584eb13-4577-4c6a-91d6-1d60cedde1fe" class="plan-cta">Buy Team — $149</a>
       </div>
       <div class="plan-card">
         <div><div class="plan-name">Business</div><div class="plan-desc">For larger teams and organizations.</div></div>
@@ -612,7 +537,7 @@
           <li>Future feature updates included</li>
           <li>Priority support</li>
         </ul>
-        <a href="https://ownsuite.lemonsqueezy.com/checkout/buy/0d34fdf3-b0f6-4f8f-b939-1709f8a1e155" class="plan-cta outline">Buy Business · $299</a>
+        <a href="https://ownsuite.lemonsqueezy.com/checkout/buy/0d34fdf3-b0f6-4f8f-b939-1709f8a1e155" class="plan-cta outline">Buy Business — $299</a>
       </div>
     </div>
     <div class="pricing-note">Solo includes 12 months of updates · Team &amp; Business receive all future updates · Secure checkout via Lemon Squeezy · Instant download after purchase</div>
@@ -622,7 +547,7 @@
     <div style="max-width:560px;margin:0 auto;text-align:center;">
       <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.25);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;color:#a5b4fc;margin-bottom:24px;letter-spacing:0.5px;">🪟 Windows Version</div>
       <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;letter-spacing:-0.5px;margin-bottom:16px;color:#f1f5f9;">Mac users are already owning their schedules.</h2>
-      <p style="font-size:16px;color:#94a3b8;line-height:1.75;margin-bottom:36px;">GanttOWN for Windows is in the works. Drop your email and we'll notify you the day it drops. No spam, just one email.</p>
+      <p style="font-size:16px;color:#94a3b8;line-height:1.75;margin-bottom:36px;">GanttOWN for Windows is in the works. Drop your email and we'll notify you the day it drops — no spam, just one email.</p>
       <form id="waitlist-form" action="https://formspree.io/f/xvzyllvy" method="POST" style="display:flex;flex-wrap:wrap;gap:10px;max-width:420px;margin:0 auto 16px;">
         <input type="email" name="email" placeholder="you@company.com" required
           style="flex:1;min-width:0;background:#1e293b;border:1px solid #334155;border-radius:8px;padding:12px 16px;color:#f1f5f9;font-size:14px;font-family:'Inter',sans-serif;outline:none;"/>
@@ -640,12 +565,12 @@
       <div class="section-label">FAQ</div>
       <h2 class="section-title">Common questions</h2>
       <div class="faq-list">
-        <div class="faq-item"><div class="faq-q">Does it really work without the internet?</div><div class="faq-a">Yes. GanttOWN is a native desktop Gantt chart app that works completely offline once installed. Your project files are saved locally. No cloud sync, no account required after activation.</div></div>
-        <div class="faq-item"><div class="faq-q">Does GanttOWN ever need an online connection?</div><div class="faq-a">Only in two situations: when downloading updates, and when activating or deactivating a license. Everything else (opening, editing, and saving your projects) works entirely offline. So you'll want to be connected the first time you set up a license or move it to another machine, but your day-to-day work never needs the internet.</div></div>
-        <div class="faq-item"><div class="faq-q">What does "one-time purchase" mean exactly?</div><div class="faq-a">You pay once and own the software. There are no monthly fees or renewal charges. Solo includes 12 months of updates. Team and Business receive all future feature updates as they're released, at no additional cost.</div></div>
-        <div class="faq-item"><div class="faq-q">Can my team collaborate on the same file?</div><div class="faq-a">Yes. Save your .gantt file to a shared network drive, SharePoint, or OneDrive. Team members open it directly. No server setup required. File locking prevents simultaneous edits.</div></div>
-        <div class="faq-item"><div class="faq-q">What's the difference between the tiers?</div><div class="faq-a">The tiers differ in both team size and collaboration features. Solo supports up to 5 members and is ideal for individual PMs. Team (up to 20) and Business (up to 150) unlock the full collaboration suite: PM and member roles with separate passwords, member inboxes, date change request and approval workflows, PM-to-member messaging, project log, and a full audit trail.</div></div>
-        <div class="faq-item"><div class="faq-q">Mac or Windows?</div><div class="faq-a">Mac is available now. Windows is in active development. Join the waitlist and we'll email you the day it ships. Your license key will work on either platform, so buying today covers you for both.</div></div>
+        <div class="faq-item"><div class="faq-q">Does it really work without the internet?</div><div class="faq-a">Yes. GanttOWN is a native desktop Gantt chart app that works completely offline once installed. Your project files are saved locally — no cloud sync, no account required after activation.</div></div>
+        <div class="faq-item"><div class="faq-q">Does GanttOWN ever need an online connection?</div><div class="faq-a">Only in two situations: when downloading updates, and when activating or deactivating a license. Everything else — opening, editing, and saving your projects — works entirely offline. So you'll want to be connected the first time you set up a license or move it to another machine, but your day-to-day work never needs the internet.</div></div>
+        <div class="faq-item"><div class="faq-q">What does "one-time purchase" mean exactly?</div><div class="faq-a">You pay once and own the software. There are no monthly fees or renewal charges. Solo includes 12 months of updates. Team and Business receive all future feature updates as they're released — no additional cost.</div></div>
+        <div class="faq-item"><div class="faq-q">Can my team collaborate on the same file?</div><div class="faq-a">Yes. Save your .gantt file to a shared network drive, SharePoint, or OneDrive. Team members open it directly — no server setup required. File locking prevents simultaneous edits.</div></div>
+        <div class="faq-item"><div class="faq-q">What's the difference between the tiers?</div><div class="faq-a">The tiers differ in both team size and collaboration features. Solo supports up to 5 members and is ideal for individual PMs. Team (up to 20) and Business (up to 150) unlock the full collaboration suite — PM and member roles with separate passwords, member inboxes, date change request and approval workflows, PM-to-member messaging, project log, and a full audit trail.</div></div>
+        <div class="faq-item"><div class="faq-q">Mac or Windows?</div><div class="faq-a">Mac is available now. Windows is in active development — join the waitlist and we'll email you the day it ships. Your license key will work on either platform, so buying today covers you for both.</div></div>
         <div class="faq-item"><div class="faq-q">What if I need help?</div><div class="faq-a">Email us at hello@ownsuite.io. We're a small team and we actually respond.</div></div>
       </div>
     </div>
@@ -659,11 +584,11 @@
       <!-- Edit the descriptions below to match your real release notes for each patch. -->
       <div class="timeline">
 
-        <!-- 1.0: Launch milestone -->
+        <!-- 1.0 — Launch milestone -->
         <div class="tl-item tl-milestone">
           <div class="tl-node"></div>
           <div class="tl-version">1.0 <span class="tl-tag">Launch</span></div>
-          <div class="tl-desc">The first public release of GanttOWN: full drag-and-drop Gantt scheduling, critical path, milestones, baselines, role-based access, the audit trail, and PDF &amp; Excel export.</div>
+          <div class="tl-desc">The first public release of GanttOWN — full drag-and-drop Gantt scheduling, critical path, milestones, baselines, role-based access, the audit trail, and PDF &amp; Excel export.</div>
         </div>
 
         <!-- Point releases within 1.0 -->
@@ -700,7 +625,7 @@
         <div class="tl-item">
           <div class="tl-node"></div>
           <div class="tl-version">1.0.7 <span class="tl-tag">Current</span></div>
-          <div class="tl-desc">The latest release, the most stable and polished GanttOWN yet.</div>
+          <div class="tl-desc">The latest release — the most stable and polished GanttOWN yet.</div>
         </div>
 
       </div>
@@ -711,14 +636,13 @@
 
   <footer>
     <a href="/" class="footer-logo">
-      <img src="/logo-mark.svg" alt="" class="logo-mark"/>
+      <div class="logo-mark">G</div>
       <span class="logo-text">Gantt<span>OWN</span></span>
     </a>
     <div class="footer-tagline">Your schedule. Your rules.</div>
     <div class="footer-links">
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
-      <a href="/feedback.html">Feedback</a>
       <a href="https://ownsuite.io">OwnSuite</a>
       <a href="https://ownsuite.io/deactivate">Manage Licenses</a>
       <a href="mailto:hello@ownsuite.io">hello@ownsuite.io</a>
@@ -768,5 +692,15 @@
       }
     });
   </script>
-</body>
+<script>window.addEventListener("load",function(){
+  var b=document.querySelector(".nav-toggle");
+  var cs=getComputedStyle(b);
+  var r=b.getBoundingClientRect();
+  var nav=document.querySelector("nav");
+  var ncs=getComputedStyle(nav);
+  var banner=document.createElement("pre");
+  banner.style.cssText="position:fixed;top:70px;left:0;right:0;z-index:9999;background:#fff;color:#000;font-size:11px;padding:8px;margin:0;white-space:pre-wrap;";
+  banner.textContent="vw="+window.innerWidth+"\ntoggle display="+cs.display+" vis="+cs.visibility+" w="+cs.width+" pos="+cs.position+"\nrect x="+r.x.toFixed(0)+" y="+r.y.toFixed(0)+" w="+r.width.toFixed(0)+" h="+r.height.toFixed(0)+"\nnav display="+ncs.display+" flexwrap="+ncs.flexWrap+" justify="+ncs.justifyContent;
+  document.body.appendChild(banner);
+});</script></body>
 </html>
