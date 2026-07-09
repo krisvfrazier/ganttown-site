@@ -132,6 +132,7 @@
     .hero-explore { display:none; }
     .hero-mac-note { display:none; }
     .pricing-mac-note { display:none; }
+    .pricing-compact { display:none; }
 
     .features { padding:80px 40px; max-width:1060px; margin:0 auto; }
     .section-label { text-align:center; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--indigo); margin-bottom:12px; }
@@ -328,6 +329,32 @@
       .pricing-mac-note {
         display:block; text-align:center; max-width:420px; margin:-24px auto 8px;
         font-size:13px; line-height:1.6; color:var(--subtle);
+      }
+
+      /* show the product sooner: screenshots jump ahead of the feature grid */
+      body { display:flex; flex-direction:column; }
+      body > section, body > footer { order:4; }
+      .hero        { order:1; }
+      .screenshots { order:2; }
+      .features    { order:3; }
+
+      /* collapse the three pricing cards into one compact summary */
+      .pricing-grid, .pricing-note { display:none; }
+      .pricing-compact {
+        display:block; max-width:420px; margin:36px auto 0;
+        border:1px solid var(--border); border-radius:14px; overflow:hidden;
+        background:var(--surface);
+      }
+      .pc-row {
+        display:flex; align-items:center; justify-content:space-between; gap:16px;
+        padding:16px 18px; border-bottom:1px solid var(--border);
+      }
+      .pc-row.featured { background:linear-gradient(135deg,rgba(99,102,241,0.14),rgba(139,92,246,0.08)); }
+      .pc-info strong { display:block; font-size:15px; font-weight:700; }
+      .pc-info span { font-size:12px; color:var(--muted); }
+      .pc-price { font-size:24px; font-weight:800; letter-spacing:-0.5px; }
+      .pc-foot {
+        padding:16px 18px; font-size:12.5px; line-height:1.6; color:var(--subtle);
       }
     }
     @media(max-width:480px) {
@@ -634,6 +661,12 @@
         </ul>
         <a href="https://ownsuite.lemonsqueezy.com/checkout/buy/0d34fdf3-b0f6-4f8f-b939-1709f8a1e155" class="plan-cta outline">Buy Business · $299</a>
       </div>
+    </div>
+    <div class="pricing-compact">
+      <div class="pc-row"><div class="pc-info"><strong>Solo</strong><span>Up to 5 people</span></div><div class="pc-price">$49</div></div>
+      <div class="pc-row featured"><div class="pc-info"><strong>Team</strong><span>Up to 20 · most popular</span></div><div class="pc-price">$149</div></div>
+      <div class="pc-row"><div class="pc-info"><strong>Business</strong><span>Up to 150 people</span></div><div class="pc-price">$299</div></div>
+      <p class="pc-foot">One-time purchase, no subscription. Team &amp; Business include all future updates. The full feature breakdown and checkout live on your Mac.</p>
     </div>
     <div class="pricing-note">Solo includes 12 months of updates · Team &amp; Business receive all future updates · Secure checkout via Lemon Squeezy · Instant download after purchase</div>
   </section>
