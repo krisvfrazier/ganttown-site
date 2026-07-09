@@ -128,6 +128,10 @@
     .btn-secondary { background:transparent; border:1px solid var(--border); color:var(--subtle); font-size:14px; font-weight:500; padding:12px 24px; border-radius:10px; text-decoration:none; transition:border-color 0.2s,color 0.2s; }
     .btn-secondary:hover { border-color:var(--indigo); color:var(--text); }
     .hero-note { font-size:12px; color:var(--muted); }
+    /* mobile-only hero pieces — hidden on desktop, shown in the ≤768px block */
+    .hero-explore { display:none; }
+    .hero-mac-note { display:none; }
+    .pricing-mac-note { display:none; }
 
     .features { padding:80px 40px; max-width:1060px; margin:0 auto; }
     .section-label { text-align:center; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--indigo); margin-bottom:12px; }
@@ -309,6 +313,22 @@
       .nav-right { display:none; }
       .nav-toggle { display:flex; }
       .mobile-menu { display:flex; }
+
+      /* ── MOBILE: lead with information, invite to Mac (not a hard buy push) ── */
+      .hero { padding-top:120px; padding-bottom:64px; }
+      .hero-buy { display:none; }                 /* drop the "buy now" push */
+      .hero-explore { display:inline-flex; }       /* soft "look around" CTA instead */
+      .hero-actions { margin-bottom:28px; }
+      .hero-mac-note {
+        display:block; max-width:420px; margin:22px auto 0;
+        background:rgba(99,102,241,0.08); border:1px solid rgba(99,102,241,0.22);
+        border-radius:12px; padding:14px 18px;
+        font-size:13.5px; line-height:1.6; color:#c7d2fe;
+      }
+      .pricing-mac-note {
+        display:block; text-align:center; max-width:420px; margin:-24px auto 8px;
+        font-size:13px; line-height:1.6; color:var(--subtle);
+      }
     }
     @media(max-width:480px) {
       #waitlist-form { flex-direction:column; }
@@ -373,10 +393,12 @@
     <h1>The Gantt chart app you<br/><span>buy once and own.</span></h1>
     <p class="hero-sub">A fast, powerful desktop Gantt chart app. Buy once, use forever. No subscription, no cloud, no monthly fee. Works fully offline, with your files on your own machine.</p>
     <div class="hero-actions">
-      <a href="#pricing" class="btn-primary">Get GanttOWN →</a>
+      <a href="#pricing" class="btn-primary hero-buy">Get GanttOWN →</a>
+      <a href="#screenshots" class="btn-primary hero-explore">See it in action →</a>
       <a href="#features" class="btn-secondary">See features</a>
     </div>
     <div class="hero-note">Mac · Windows coming soon · Works on SharePoint &amp; network drives · PDF &amp; Excel export</div>
+    <p class="hero-mac-note">🖥 GanttOWN is a desktop app for Mac. Have a look around — when you're ready, open this page on your Mac to grab it.</p>
   </section>
 
   <section class="features" id="features">
@@ -562,6 +584,7 @@
   <section class="pricing" id="pricing">
     <div class="section-label">Pricing</div>
     <h2 class="section-title">Pay once. Use forever.</h2>
+    <p class="pricing-mac-note">Have a browse — GanttOWN runs on Mac, so head there when you're ready to buy.</p>
     <div class="pricing-grid">
       <div class="plan-card">
         <div><div class="plan-name">Solo</div><div class="plan-desc">For freelancers and small teams who just want to schedule, with no roles and no approvals.</div></div>
