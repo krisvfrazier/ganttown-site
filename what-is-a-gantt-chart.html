@@ -251,7 +251,7 @@
     <p>It's the clearest way ever invented to answer the two questions every project runs on: <strong>what happens next, and what happens if something slips?</strong> Below is a quick tour of how they work, why they beat the easier tools most people reach for first, who gets the most out of them, and where they came from.</p>
 
     <h2>How a Gantt chart works</h2>
-    <p>Read a Gantt chart left to right for time and top to bottom for tasks. Here's a simple project — a product launch — drawn the way a Gantt chart shows it:</p>
+    <p>Read a Gantt chart left to right for time and top to bottom for tasks. Here's a simple project, a product launch, drawn the way a Gantt chart shows it:</p>
 
     <div class="gantt-demo">
       <div class="gantt-grid" role="img" aria-label="Example Gantt chart of a product launch, showing task bars across eight weeks with dependencies, a highlighted critical path, and a launch milestone.">
@@ -282,21 +282,21 @@
         <span><i class="g-chip crit"></i> Critical path</span>
         <span><i class="g-chip ms"></i> Milestone</span>
       </div>
-      <p class="gantt-cap">Each bar is a task placed on the calendar. Some tasks can't start until an earlier one finishes — <strong>Design</strong> waits on <strong>Research</strong>, <strong>Build</strong> waits on <strong>Design</strong>. That chain of must-finish-first tasks is the <strong>critical path</strong> (shown in amber): the sequence that decides your finish date. The diamond is a <strong>milestone</strong> — a key checkpoint with no duration, like the launch itself.</p>
+      <p class="gantt-cap">Each bar is a task placed on the calendar. Some tasks can't start until an earlier one finishes: <strong>Design</strong> waits on <strong>Research</strong>, <strong>Build</strong> waits on <strong>Design</strong>. That chain of must-finish-first tasks is the <strong>critical path</strong> (shown in amber): the sequence that decides your finish date. The diamond is a <strong>milestone</strong>, a key checkpoint with no duration, like the launch itself.</p>
     </div>
 
     <p>The building blocks are always the same:</p>
     <ul>
-      <li><strong>Tasks</strong> — the individual pieces of work, one bar each.</li>
-      <li><strong>Duration</strong> — how long a task runs, shown by the length of its bar.</li>
-      <li><strong>Dependencies</strong> — links that say "this can't start until that finishes," so the schedule reflects reality instead of wishful thinking.</li>
-      <li><strong>Milestones</strong> — zero-length checkpoints that mark a deadline, a hand-off, or a launch.</li>
-      <li><strong>The critical path</strong> — the longest chain of dependent tasks. If any of them slips, the whole project's end date slips with it.</li>
+      <li><strong>Tasks:</strong> the individual pieces of work, one bar each.</li>
+      <li><strong>Duration:</strong> how long a task runs, shown by the length of its bar.</li>
+      <li><strong>Dependencies:</strong> links that say "this can't start until that finishes," so the schedule reflects reality instead of wishful thinking.</li>
+      <li><strong>Milestones:</strong> zero-length checkpoints that mark a deadline, a hand-off, or a launch.</li>
+      <li><strong>The critical path:</strong> the longest chain of dependent tasks. If any of them slips, the whole project's end date slips with it.</li>
     </ul>
-    <div class="callout"><p><strong>The magic moment:</strong> move one task and a good Gantt tool cascades every dependent task forward automatically — and instantly tells you whether your deadline still holds. That single behaviour is why Gantt charts have outlived every trend for over a century.</p></div>
+    <div class="callout"><p><strong>The magic moment:</strong> move one task and a good Gantt tool cascades every dependent task forward automatically, and instantly tells you whether your deadline still holds. That single behaviour is why Gantt charts have outlived every trend for over a century.</p></div>
 
     <h2>Why a Gantt chart beats the easier tools</h2>
-    <p>Most people start a project in whatever's already open: a spreadsheet, a to-do app, a shared calendar, or a whiteboard. Those are fine for a list of things to do. They fall apart the moment the work has an <em>order</em> — because none of them understand that one task depends on another.</p>
+    <p>Most people start a project in whatever's already open: a spreadsheet, a to-do app, a shared calendar, or a whiteboard. Those are fine for a list of things to do. They fall apart the moment the work has an <em>order</em>, because none of them understand that one task depends on another.</p>
 
     <div class="compare-wrap">
       <table class="compare">
@@ -321,7 +321,7 @@
       </table>
     </div>
 
-    <p>The pattern is clear. A spreadsheet can <em>hold</em> your dates, but it doesn't <em>know</em> that pushing "Design" a week late shoves "Build," "QA," and your launch a week later too — you have to re-do all that math by hand, every time, and hope you didn't miss a cell. A Gantt chart does it for you. A to-do list tells you <em>what</em> to do but never <em>when</em>, or in what order, or what's now at risk. A calendar shows time but has no concept of one task waiting on another.</p>
+    <p>The pattern is clear. A spreadsheet can <em>hold</em> your dates, but it doesn't <em>know</em> that pushing "Design" a week late shoves "Build," "QA," and your launch a week later too. You have to re-do all that math by hand, every time, and hope you didn't miss a cell. A Gantt chart does it for you. A to-do list tells you <em>what</em> to do but never <em>when</em>, or in what order, or what's now at risk. A calendar shows time but has no concept of one task waiting on another.</p>
     <p>That's the real difference: easier tools store information, a Gantt chart <strong>models the plan</strong>. Ask it "what happens if this is late?" and it answers instantly, in colour, across the whole project.</p>
 
     <h2>Who Gantt charts serve best</h2>
@@ -339,13 +339,13 @@
     <p><strong>Where a Gantt chart is overkill:</strong> a five-item errand list, a solo task you'll finish today, or work with no dependencies and no deadline. If order doesn't matter, a checklist is genuinely enough. The moment order <em>does</em> matter, a Gantt chart earns its place.</p>
 
     <h2>A very brief history</h2>
-    <p>The chart is named after <strong>Henry L. Gantt</strong>, an American mechanical engineer who popularised it in the <strong>1910s</strong>. Working in the factories of the early industrial age, he needed a way to see, at a glance, whether production was ahead of or behind schedule — so managers could act on a slip while there was still time to fix it. His visual bars-against-a-timeline did exactly that, and they spread quickly through manufacturing and, famously, into large engineering and infrastructure projects.</p>
-    <div class="callout"><p><strong>A footnote for the curious:</strong> a Polish engineer named <strong>Karol Adamiecki</strong> devised a strikingly similar chart, the "harmonogram," about fifteen years earlier — but published it in Polish and Russian, so it never reached a wide audience. Gantt's version, in English at the dawn of modern management, is the one the world adopted, and the name stuck.</p></div>
+    <p>The chart is named after <strong>Henry L. Gantt</strong>, an American mechanical engineer who popularised it in the <strong>1910s</strong>. Working in the factories of the early industrial age, he needed a way to see, at a glance, whether production was ahead of or behind schedule, so managers could act on a slip while there was still time to fix it. His visual bars-against-a-timeline did exactly that, and they spread quickly through manufacturing and, famously, into large engineering and infrastructure projects.</p>
+    <div class="callout"><p><strong>A footnote for the curious:</strong> a Polish engineer named <strong>Karol Adamiecki</strong> devised a strikingly similar chart, the "harmonogram," about fifteen years earlier, but published it in Polish and Russian, so it never reached a wide audience. Gantt's version, in English at the dawn of modern management, is the one the world adopted, and the name stuck.</p></div>
     <p>More than a century later the format has barely changed, because it solves a problem that never goes away: work happens in an order, and someone has to see that order clearly. Software just made the bars move on their own.</p>
 
     <div class="cta-band">
       <h2>See a real Gantt chart in action</h2>
-      <p>GanttOWN is a fast desktop Gantt chart app you buy once and own — critical path, milestones, and dependency cascades included. No subscription, works offline.</p>
+      <p>GanttOWN is a fast desktop Gantt chart app you buy once and own: critical path, milestones, and dependency cascades included. No subscription, works offline.</p>
       <a href="/#screenshots" class="btn-primary">Explore GanttOWN →</a>
     </div>
   </article>
