@@ -48,6 +48,71 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does it really work without the internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. GanttOWN is a native desktop Gantt chart app that works completely offline once installed. Your project files are saved locally. No cloud sync, no account required after activation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does GanttOWN ever need an online connection?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only in two situations: when downloading updates, and when activating or deactivating a license. Everything else (opening, editing, and saving your projects) works entirely offline. So you'll want to be connected the first time you set up a license or move it to another machine, but your day-to-day work never needs the internet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does \"one-time purchase\" mean exactly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You pay once and own the software. There are no monthly fees or renewal charges. Solo includes 12 months of updates. Team and Business receive all future feature updates as they're released, at no additional cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can my team collaborate on the same file?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Save your .gantt file to a shared network drive, SharePoint, or OneDrive. Team members open it directly. No server setup required. File locking prevents simultaneous edits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between the tiers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The tiers differ in both team size and collaboration features. Solo supports up to 5 members and is ideal for individual PMs. Team (up to 20) and Business (up to 150) unlock the full collaboration suite: PM and member roles with separate passwords, member inboxes, date change request and approval workflows, PM-to-member messaging, project log, and a full audit trail."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mac or Windows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mac is available now. Windows is in active development. Join the waitlist and we'll email you the day it ships. Your license key will work on either platform, so buying today covers you for both."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I need help?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Email us at hello@ownsuite.io. We're a small team and we actually respond."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -393,6 +458,7 @@
     <div class="nav-right">
       <a href="#features" class="nav-link">Features</a>
       <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#faq" class="nav-link">FAQ</a>
       <a href="#changelog" class="nav-link">Updates</a>
       <a href="/feedback.html" class="nav-link">Feedback</a>
       <a href="mailto:hello@ownsuite.io" class="nav-link">Support</a>
@@ -407,6 +473,7 @@
     <a href="#features" class="mobile-link">Features</a>
     <a href="#screenshots" class="mobile-link">Screenshots</a>
     <a href="#pricing" class="mobile-link">Pricing</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
     <a href="#changelog" class="mobile-link">Updates</a>
     <a href="/feedback.html" class="mobile-link">Feedback</a>
     <a href="mailto:hello@ownsuite.io" class="mobile-link">Support</a>
@@ -595,7 +662,7 @@
     ssRenderDetail();
   </script>
 
-  <section class="who">
+  <section class="who" id="who">
     <div class="who-inner">
       <div class="section-label">Who It's For</div>
       <h2 class="section-title">Built for teams tired of SaaS pricing</h2>
@@ -688,7 +755,7 @@
     </div>
   </section>
 
-  <section class="faq">
+  <section class="faq" id="faq">
     <div class="faq-inner">
       <div class="section-label">FAQ</div>
       <h2 class="section-title">Common questions</h2>
@@ -776,6 +843,7 @@
     <div class="footer-links">
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="/feedback.html">Feedback</a>
       <a href="https://ownsuite.io">OwnSuite</a>
       <a href="https://ownsuite.io/deactivate">Manage Licenses</a>
