@@ -940,7 +940,9 @@
       // 4. Section-in-view: precise "did they reach it" signals, fired once each.
       var sections = [
         { id: 'screenshots', event: 'viewed_screenshots' },
-        { id: 'pricing',     event: 'viewed_pricing' }
+        { id: 'pricing',     event: 'viewed_pricing' },
+        { id: 'faq',         event: 'viewed_faq' },
+        { id: 'changelog',   event: 'viewed_changelog' }
       ];
       if ('IntersectionObserver' in window) {
         var io = new IntersectionObserver(function(entries){
