@@ -385,6 +385,65 @@
         navToggle.setAttribute('aria-label', 'Open menu');
       });
     });
+
+    /* ── CUSTOM ENGAGEMENT INSTRUMENTATION ──
+       Fires named events into the existing GA4 property so we can see
+       how readers move through the guide. Events are namespaced with a
+       'guide_' page prefix so they don't blur with the homepage's.
+       View live in GA4 → Admin → DebugView, or Reports → Engagement → Events. */
+    (function(){
+      var page = 'guide_';
+      var track = function(name, params){
+        if (typeof gtag === 'function') gtag('event', page + name, params || {});
+      };
+
+      // 1. Genuine attention: fired once the visitor stays 10 seconds.
+      setTimeout(function(){ track('engaged_10s'); }, 10000);
+
+      // 2. Scroll depth at 25 / 50 / 75% (default GA4 only reports 90%).
+      var marks = [25, 50, 75], hit = {};
+      window.addEventListener('scroll', function(){
+        var el = document.documentElement, body = document.body;
+        var scrollable = (body.scrollHeight || el.scrollHeight) - window.innerHeight;
+        if (scrollable <= 0) return;
+        var pct = (window.scrollY || el.scrollTop) / scrollable * 100;
+        marks.forEach(function(m){
+          if (!hit[m] && pct >= m) { hit[m] = true; track('scroll_' + m); }
+        });
+      }, { passive: true });
+
+      // 3. CTA clicks, labeled by location so we can see which button pulls.
+      var wire = function(sel, location){
+        document.querySelectorAll(sel).forEach(function(a){
+          a.addEventListener('click', function(){
+            track('cta_click', {
+              location: location,
+              label: (a.textContent || '').trim().slice(0, 60)
+            });
+          });
+        });
+      };
+      wire('.nav-cta', 'nav');
+      wire('.mobile-cta', 'mobile_nav');
+      wire('.cta-band a', 'cta_band');
+
+      // 4. Section-in-view: precise "did they reach it" signals, fired once each.
+      var sections = [
+        { sel: '.compare-wrap', event: 'viewed_comparison' },
+        { sel: '.cta-band',     event: 'viewed_cta_band' }
+      ];
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if (e.isIntersecting) { track(e.target.dataset.viewEvent); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.3 });
+        sections.forEach(function(s){
+          var el = document.querySelector(s.sel);
+          if (el) { el.dataset.viewEvent = s.event; io.observe(el); }
+        });
+      }
+    })();
   </script>
 </body>
 </html>
