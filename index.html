@@ -809,6 +809,23 @@
       wire('.nav-cta', 'nav');
       wire('.mobile-cta', 'mobile_nav');
       wire('.plan-cta', 'pricing');
+
+      // 4. Section-in-view: precise "did they reach it" signals, fired once each.
+      var sections = [
+        { id: 'screenshots', event: 'viewed_screenshots' },
+        { id: 'pricing',     event: 'viewed_pricing' }
+      ];
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if (e.isIntersecting) { track(e.target.dataset.viewEvent); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.3 });
+        sections.forEach(function(s){
+          var el = document.getElementById(s.id);
+          if (el) { el.dataset.viewEvent = s.event; io.observe(el); }
+        });
+      }
     })();
   </script>
 </body>
