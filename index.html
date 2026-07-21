@@ -22,11 +22,11 @@
   <meta property="og:description" content="A one-time purchase desktop Gantt chart app. No subscription, no cloud, works offline. Critical path, milestones, team collaboration, and PDF export."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://ganttown.com"/>
-  <meta property="og:image" content="https://ganttown.com/Gantt%20Project%20With%20Milestones.png"/>
+  <meta property="og:image" content="https://ganttown.com/images/ScheduleFULL.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="GanttOWN: The Gantt Chart App You Buy Once and Own"/>
   <meta name="twitter:description" content="One-time purchase desktop Gantt chart app. No subscription, no cloud, works offline."/>
-  <meta name="twitter:image" content="https://ganttown.com/Gantt%20Project%20With%20Milestones.png"/>
+  <meta name="twitter:image" content="https://ganttown.com/images/ScheduleFULL.png"/>
   <link rel="canonical" href="https://ganttown.com"/>
 
   <script type="application/ld+json">
@@ -416,65 +416,54 @@
   </div>
 
   <script>
-    const SS_BASE = 'https://ganttown.com/';
+    const SS_BASE = 'images/';
     const SS_DATA = [
       {
         icon:'🗓', name:'Schedule',
         desc:'Build your entire project on a drag-and-drop timeline with dependencies, critical path, and milestones. Move one task and everything downstream recalculates instantly, right through to the PDF export.',
         shots:[
-          { src:'Gantt Project With Milestones.png', cap:'Full Gantt chart with milestones, dependency arrows, critical path, and today line' },
-          { src:'Full Gantt Project.png', cap:'Drag-and-drop tasks with live dependency cascading' },
-          { src:'Task creation with status filled.png', cap:'Task editor: assignee, dates, progress, dependencies, and notes' },
-          { src:'Full PDF Export With Styling.png', cap:'PDF export: print-ready with full styling, critical path, and baseline data intact' },
+          { src:'ScheduleFULL.png', cap:'Full Gantt chart with milestones, dependency arrows, critical path, and today line' },
+          { src:'ScheduleTASK.png', cap:'Task editor: assignee, dates, progress, dependencies, and notes' },
         ],
       },
       {
         icon:'👥', name:'Collaboration',
         desc:'Every PM and member gets a personal inbox the moment they log in. Completed tasks, new notes, and pending items are waiting, so nobody has to dig through the chart to see what changed.',
         shots:[
-          { src:'PM inbox feature.png', cap:'PM inbox: completed tasks, new notes, and pending approvals on login' },
-          { src:'Member inbox feature.png', cap:'Member inbox: your tasks, PM messages, and resolved requests' },
-          { src:'New member inbox with activity.png', cap:'New activity flagged: PM notes, log entries, and resolved requests' },
+          { src:'ColaborationPM.png', cap:'PM inbox: completed tasks, new notes, and pending approvals on login' },
+          { src:'ColaborationMBR.png', cap:'Member inbox: your tasks, PM messages, and resolved requests' },
         ],
       },
       {
         icon:'✅', name:'Approvals',
         desc:'Members request date changes with a reason instead of editing the schedule directly. The PM reviews each request in full context, then approves or rejects it with a comment.',
         shots:[
-          { src:'Requesting date change.png', cap:'Members submit date change requests with a reason, no direct edit access' },
-          { src:'PM inbox with date change request.png', cap:'PM sees pending requests with full context before approving' },
-          { src:'PM approving date change with comment.png', cap:'Approve or reject with a comment; the member sees the response in their inbox' },
+          { src:'ApprovalREQUEST.png', cap:'Members submit date change requests with a reason, no direct edit access' },
+          { src:'ApprovalRECEV.png', cap:'PM sees pending requests with full context before approving' },
+          { src:'ApprovalRESPONSE.png', cap:'Approve or reject with a comment; the member sees the response in their inbox' },
+          { src:'ApprovalMBRINBX.png', cap:'The member sees the PM\'s response and decision in their inbox' },
         ],
       },
       {
         icon:'📓', name:'Project Log',
         desc:'A shared running journal keeps the whole team on the same page. PM announcements are styled apart from member entries so the important updates always stand out.',
         shots:[
-          { src:'Project Log with PM.png', cap:'Shared project log: PM announcements styled apart from member entries' },
-          { src:'Milestone completion.png', cap:'Milestones tracked on the timeline; mark complete with a full audit trail' },
-        ],
-      },
-      {
-        icon:'🔑', name:'Licensing',
-        desc:'Activate once with your license key, no account or sign-up required. Set a PM password and your project is locked and ready for the team to open.',
-        shots:[
-          { src:'License Screen.png', cap:'One-time license activation: enter your key, no account required' },
-          { src:'After Password set.png', cap:'Set a PM password and your project is locked and ready for your team' },
-          { src:'Exsisting Projects Login.png', cap:'Existing projects are password protected: only the PM and assigned members can open them' },
+          { src:'ProjectlogOPEN.png', cap:'Shared project log: PM announcements styled apart from member entries' },
+          { src:'MilestoneOPEN.png', cap:'Milestones tracked on the timeline; mark complete with a full audit trail' },
         ],
       },
       {
         icon:'📊', name:'Dashboard',
         desc:'One screen gives you the health of the whole project at a glance. Total tasks, completion rate, schedule health, milestone status, and pending approvals, with no scrolling.',
         shots:[
-          { src:'project dashboard status at a glance.png', cap:'Dashboard: total tasks, completion rate, schedule health, milestone status, and pending approvals at a glance' },
+          { src:'DashboardFULL.png', cap:'Dashboard: total tasks, completion rate, schedule health, milestone status, and pending approvals at a glance' },
         ],
       },
       {
         icon:'🛡', name:'Audit',
         desc:'Every action is timestamped and attributed, from date changes and approvals down to failed logins. The PM-only audit log is a complete record of who did what, and when.',
         shots:[
-          { src:'full audit viewing.png', cap:'Full audit log: failed logins, date changes, acknowledgements, and completions, all attributed. PM-only access.' },
+          { src:'AuditFULL.png', cap:'Full audit log: failed logins, date changes, acknowledgements, and completions, all attributed. PM-only access.' },
         ],
       },
     ];
