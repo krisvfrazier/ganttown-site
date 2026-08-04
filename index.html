@@ -921,21 +921,17 @@
         });
       }, { passive: true });
 
-      // 3. CTA clicks, labeled by location so we can see which button pulls.
-      var wire = function(sel, location){
-        document.querySelectorAll(sel).forEach(function(a){
-          a.addEventListener('click', function(){
-            track('cta_click', {
-              location: location,
-              label: (a.textContent || '').trim().slice(0, 60)
-            });
+      // 3. CTA clicks. Purchase intent only: the three pricing buy buttons.
+      //    Hero/nav/mobile CTAs are just anchor scrolls, so they're deliberately
+      //    not tracked here; they were drowning the real signal.
+      document.querySelectorAll('.plan-cta').forEach(function(a){
+        a.addEventListener('click', function(){
+          track('cta_click', {
+            location: 'pricing',
+            label: (a.textContent || '').trim().slice(0, 60)
           });
         });
-      };
-      wire('.hero-actions a', 'hero');
-      wire('.nav-cta', 'nav');
-      wire('.mobile-cta', 'mobile_nav');
-      wire('.plan-cta', 'pricing');
+      });
 
       // 4. Section-in-view: precise "did they reach it" signals, fired once each.
       var sections = [
