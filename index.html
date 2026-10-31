@@ -13,13 +13,13 @@
   </script>
   <link rel="icon" type="image/svg+xml" href="/logo-mark.svg"/>
   <title>Gantt Chart Software You Buy Once, No Subscription | GanttOWN</title>
-  <meta name="description" content="Buy once, own it. A one-time purchase desktop Gantt chart app for Mac. No subscription, no cloud, works offline. Critical path, milestones, PDF export."/>
+  <meta name="description" content="Buy once, own it. A one-time purchase Gantt chart app for Mac. No subscription, no cloud, works offline. Phases, dependencies, critical path, PDF reports."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 
   <!-- Open Graph -->
   <meta property="og:title" content="GanttOWN: The Gantt Chart App You Buy Once and Own"/>
-  <meta property="og:description" content="A one-time purchase desktop Gantt chart app. No subscription, no cloud, works offline. Critical path, milestones, team collaboration, and PDF export."/>
+  <meta property="og:description" content="A one-time purchase desktop Gantt chart app. No subscription, no cloud, works offline. Phases, dependencies, critical path, templates, team collaboration, and PDF reports."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://ganttown.com"/>
   <meta property="og:image" content="https://ganttown.com/images/ScheduleFULL.png"/>
@@ -36,7 +36,8 @@
     "name": "GanttOWN",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "macOS",
-    "description": "One-time purchase desktop Gantt chart software for project scheduling. No subscription, works offline. Critical path, milestones, team collaboration, and PDF export.",
+    "softwareVersion": "1.0.10",
+    "description": "One-time purchase desktop Gantt chart software for project scheduling. No subscription, works offline. Phases, dependencies with lag, critical path, milestones, templates, import from Excel and Microsoft Project, team collaboration, and PDF reports.",
     "offers": {
       "@type": "AggregateOffer",
       "lowPrice": "49",
@@ -98,7 +99,23 @@
         "name": "Mac or Windows?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Mac is available now. Windows is in active development. Join the waitlist and we'll email you the day it ships. Your license key will work on either platform, so buying today covers you for both."
+          "text": "Mac is available now as one universal app that runs natively on both Intel and Apple Silicon Macs. Windows is in active development. Join the waitlist and we'll email you the day it ships. Your license key will work on either platform, so buying today covers you for both."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import my existing plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. GanttOWN imports Excel (.xlsx and .xls), CSV and Microsoft Project XML files, bringing across phases, owners, progress, dependencies and milestones. You can export to Excel, PDF or a sharp PNG image, or print straight from the app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it support phases and dependencies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Group tasks into phases that show their combined progress and collapse with one click. Link tasks with dependencies (with optional lag in working days) so late work pushes everything after it, and the critical path is highlighted automatically. Schedules can skip weekends and holidays."
         }
       },
       {
@@ -505,7 +522,7 @@
       <a href="#screenshots" class="btn-primary hero-explore">See it in action →</a>
       <a href="#features" class="btn-secondary">See features</a>
     </div>
-    <div class="hero-note">Mac · Windows coming soon · Works on SharePoint &amp; network drives · PDF &amp; Excel export</div>
+    <div class="hero-note">Mac (Intel &amp; Apple Silicon) · Windows coming soon · Works on SharePoint &amp; network drives · Import from Excel &amp; MS Project</div>
     <p class="hero-mac-note">🖥 GanttOWN is a desktop app for Mac. Have a look around. When you're ready, open this page on your Mac to grab it.</p>
   </section>
 
@@ -513,18 +530,24 @@
     <div class="section-label">Features</div>
     <h2 class="section-title">Everything you need. Nothing you don't.</h2>
     <div class="features-grid">
-      <div class="feature-card"><span class="feature-icon">🖱</span><div class="feature-title">Drag &amp; Drop Scheduling</div><div class="feature-desc">Move and resize tasks visually. Dependencies cascade automatically when you shift dates.</div></div>
+      <div class="feature-card"><span class="feature-icon">🖱</span><div class="feature-title">Drag &amp; Drop Scheduling</div><div class="feature-desc">Drag bars sideways to change dates, up and down to reorder, or diagonally to do both. Made a mistake? Undo and redo up to 100 steps.</div></div>
+      <div class="feature-card"><span class="feature-icon">🗂</span><div class="feature-title">Phases</div><div class="feature-desc">Group tasks under a phase. The phase bar spans its tasks and shows their combined progress. Collapse one phase or all of them, and indent with Tab.</div></div>
+      <div class="feature-card"><span class="feature-icon">🔗</span><div class="feature-title">Dependencies with Lag</div><div class="feature-desc">A task can't start until its predecessors finish, and late work pushes everything after it. Add lag in working days, and click any arrow to edit or remove it.</div></div>
       <div class="feature-card"><span class="feature-icon">⚡</span><div class="feature-title">Critical Path</div><div class="feature-desc">Automatically highlights the tasks that determine your project end date, recalculated on every change.</div></div>
-      <div class="feature-card"><span class="feature-icon">◆</span><div class="feature-title">Milestones</div><div class="feature-desc">Track key dates on the timeline. Flag overdue milestones and mark completions with a full audit trail.</div></div>
-      <div class="feature-card"><span class="feature-icon">📸</span><div class="feature-title">Baseline &amp; Slip Tracking</div><div class="feature-desc">Snapshot your original schedule. Ghost bars and slip badges show exactly where you've drifted.</div></div>
+      <div class="feature-card"><span class="feature-icon">◆</span><div class="feature-title">Milestones &amp; Baselines</div><div class="feature-desc">Track key dates on the timeline and flag overdue milestones. Snapshot your original schedule, then ghost bars and slip badges show where you've drifted.</div></div>
+      <div class="feature-card"><span class="feature-icon">📅</span><div class="feature-title">Workday Calendar</div><div class="feature-desc">Hide weekends so Friday sits next to Monday, and mark your own holidays. Tasks keep their length in working days, and dependencies respect your calendar.</div></div>
+      <div class="feature-card"><span class="feature-icon">🧩</span><div class="feature-title">Templates</div><div class="feature-desc">Start from five built-in plans (website launch, product launch, event, marketing campaign, home renovation) on any start date, or save your own. Duplicate any project to a new date.</div></div>
+      <div class="feature-card"><span class="feature-icon">📥</span><div class="feature-title">Import from Excel &amp; MS Project</div><div class="feature-desc">Bring in plans from Excel, CSV or Microsoft Project XML, with phases, owners, progress, dependencies and milestones intact.</div></div>
+      <div class="feature-card"><span class="feature-icon">📄</span><div class="feature-title">PDF Reports Anyone Can Read</div><div class="feature-desc">Page one is a plain-English summary: status, percent complete, phases, key milestones and what's coming up next. Then a schedule table beside the timeline. Also print, PNG and Excel export.</div></div>
+      <div class="feature-card"><span class="feature-icon">🔍</span><div class="feature-title">Find, Filter &amp; Zoom</div><div class="feature-desc">Search by task or owner, filter by status or critical path, and zoom from the whole project down to single days. Jump to today in one click.</div></div>
+      <div class="feature-card"><span class="feature-icon">🎨</span><div class="feature-title">Light or Dark, Your Colors</div><div class="feature-desc">Switch between dark and light themes. Pick from 18 colors, a color-blind safe palette, or your own custom colors.</div></div>
+      <div class="feature-card"><span class="feature-icon">❓</span><div class="feature-title">Built-in Help</div><div class="feature-desc">A searchable, step-by-step guide inside the app, with Try it buttons that take you straight to each feature. A chart key explains every symbol.</div></div>
       <div class="feature-card"><span class="feature-icon">🔒</span><div class="feature-title">Role-Based Access</div><div class="feature-desc">PM and member roles with password protection. Members can update progress and request date changes.</div></div>
-      <div class="feature-card"><span class="feature-icon">📄</span><div class="feature-title">PDF &amp; Excel Export</div><div class="feature-desc">Print-ready PDF exports with critical path indicators. Excel exports include baselines, notes, and audit data.</div></div>
       <div class="feature-card"><span class="feature-icon">📓</span><div class="feature-title">Project Log</div><div class="feature-desc">A shared running log for the whole team. PM messages are visually distinguished from member entries.</div></div>
-      <div class="feature-card"><span class="feature-icon">📥</span><div class="feature-title">PM &amp; Member Inboxes</div><div class="feature-desc">On login, PMs and members each get a personal inbox: new notes, completed tasks, pending approvals, and resolved date requests, all in one place. See what changed without digging through the chart.</div></div>
+      <div class="feature-card"><span class="feature-icon">📬</span><div class="feature-title">PM &amp; Member Inboxes</div><div class="feature-desc">On login, PMs and members each get a personal inbox: new notes, completed tasks, pending approvals, and resolved date requests, all in one place. See what changed without digging through the chart.</div></div>
       <div class="feature-card"><span class="feature-icon">📊</span><div class="feature-title">Status Dashboard</div><div class="feature-desc">A one-screen read on project health: total tasks, completion rate, schedule health, milestone status, and pending approvals at a glance. Know exactly where things stand without scrolling the chart.</div></div>
       <div class="feature-card"><span class="feature-icon">🛡</span><div class="feature-title">Full Audit Trail</div><div class="feature-desc">Every action timestamped and attributed: date changes, approvals, completions, even failed logins. A complete, PM-only record of who did what, and when.</div></div>
-      <div class="feature-card"><span class="feature-icon">📅</span><div class="feature-title">Workday Calendar</div><div class="feature-desc">Schedule around real working days: turn weekends off and mark your own holidays and non-working days. Durations and dependency cascades respect your calendar, not just the raw dates.</div></div>
-      <div class="feature-card"><span class="feature-icon">🗂</span><div class="feature-title">Works Everywhere</div><div class="feature-desc">A self-hosted, offline Gantt chart: open and save .gantt files on local drives, network shares, SharePoint, or OneDrive. No server required.</div></div>
+      <div class="feature-card"><span class="feature-icon">💾</span><div class="feature-title">Works Everywhere</div><div class="feature-desc">A self-hosted, offline Gantt chart: open and save .gantt files on local drives, network shares, SharePoint, or OneDrive. Double-click a .gantt file in Finder to open it. No server required.</div></div>
     </div>
   </section>
 
@@ -786,7 +809,9 @@
         <div class="faq-item"><div class="faq-q">What does "one-time purchase" mean exactly?</div><div class="faq-a">You pay once and own the software. There are no monthly fees or renewal charges. Solo includes 12 months of updates. Team and Business receive all future feature updates as they're released, at no additional cost.</div></div>
         <div class="faq-item"><div class="faq-q">Can my team collaborate on the same file?</div><div class="faq-a">Yes. Save your .gantt file to a shared network drive, SharePoint, or OneDrive. Team members open it directly. No server setup required. File locking prevents simultaneous edits.</div></div>
         <div class="faq-item"><div class="faq-q">What's the difference between the tiers?</div><div class="faq-a">The tiers differ in both team size and collaboration features. Solo supports up to 5 members and is ideal for individual PMs. Team (up to 20) and Business (up to 150) unlock the full collaboration suite: PM and member roles with separate passwords, member inboxes, date change request and approval workflows, PM-to-member messaging, project log, and a full audit trail.</div></div>
-        <div class="faq-item"><div class="faq-q">Mac or Windows?</div><div class="faq-a">Mac is available now. Windows is in active development. Join the waitlist and we'll email you the day it ships. Your license key will work on either platform, so buying today covers you for both.</div></div>
+        <div class="faq-item"><div class="faq-q">Mac or Windows?</div><div class="faq-a">Mac is available now as one universal app that runs natively on both Intel and Apple Silicon Macs. Windows is in active development. Join the waitlist and we'll email you the day it ships. Your license key will work on either platform, so buying today covers you for both.</div></div>
+        <div class="faq-item"><div class="faq-q">Can I import my existing plans?</div><div class="faq-a">Yes. GanttOWN imports Excel (.xlsx and .xls), CSV and Microsoft Project XML files, bringing across phases, owners, progress, dependencies and milestones. You can export to Excel, PDF or a sharp PNG image, or print straight from the app.</div></div>
+        <div class="faq-item"><div class="faq-q">Does it support phases and dependencies?</div><div class="faq-a">Yes. Group tasks into phases that show their combined progress and collapse with one click. Link tasks with dependencies (with optional lag in working days) so late work pushes everything after it, and the critical path is highlighted automatically. Schedules can skip weekends and holidays.</div></div>
         <div class="faq-item"><div class="faq-q">Is there a trial, or can I get a refund?</div><div class="faq-a">Instead of a limited trial, you get the full app with a 14-day refund window. Buy any tier, use every feature on a real project, and if it isn't right for you, email hello@ownsuite.io within 14 days. We process refunds within 24 hours, no questions asked.</div></div>
         <div class="faq-item"><div class="faq-q">What if I need help?</div><div class="faq-a">Email us at hello@ownsuite.io. We're a small team and we actually respond.</div></div>
       </div>
@@ -846,8 +871,20 @@
         </div>
         <div class="tl-item">
           <div class="tl-node"></div>
-          <div class="tl-version">1.0.8 <span class="tl-tag">Current</span></div>
-          <div class="tl-desc">The latest release, the most stable and polished GanttOWN yet.</div>
+          <div class="tl-version">1.0.8</div>
+          <div class="tl-desc">Stability and polish improvements.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-node"></div>
+          <div class="tl-version">1.0.9</div>
+          <div class="tl-desc">One universal Mac app: a single download that runs natively on both Intel and Apple Silicon.</div>
+        </div>
+
+        <!-- 1.0.10: big feature update -->
+        <div class="tl-item tl-milestone">
+          <div class="tl-node"></div>
+          <div class="tl-version">1.0.10 <span class="tl-tag">Current</span></div>
+          <div class="tl-desc">Released Oct 30, 2026. The biggest update yet: phases, drag to reorder, dependencies with lag and clickable arrows, weekend-free working-day scheduling, undo and redo, five built-in templates, import from Excel, CSV and Microsoft Project, plain-English PDF reports, find and filter, zoom to fit, a light theme, a color-blind safe palette, a chart key, What's New, and a searchable in-app help guide. Plus fixes for copy and paste, keyboard shortcuts, and dates around daylight saving changes.</div>
         </div>
 
       </div>
