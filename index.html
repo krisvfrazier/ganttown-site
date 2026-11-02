@@ -227,14 +227,15 @@
     .features { padding:80px 40px; max-width:1160px; margin:0 auto; }
     .section-label { text-align:center; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--indigo); margin-bottom:12px; }
     .section-title { text-align:center; font-size:clamp(22px,3.5vw,32px); font-weight:800; letter-spacing:-0.5px; margin-bottom:48px; }
-    .feature-hero { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:36px; }
+    .feature-hero { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:36px; }
     .fh-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:28px 24px; text-align:center; }
     .fh-icon { font-size:30px; display:block; margin-bottom:12px; }
     .fh-title { font-size:17px; font-weight:700; margin-bottom:6px; }
     .fh-desc { font-size:13.5px; color:var(--subtle); line-height:1.6; }
     .feature-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; max-width:860px; margin:0 auto; }
     .feature-pills span { font-size:13px; color:var(--subtle); background:var(--surface); border:1px solid var(--border); border-radius:999px; padding:7px 14px; }
-    @media(max-width:768px) { .feature-hero { grid-template-columns:1fr; gap:14px; } }
+    @media(max-width:1000px) { .feature-hero { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:560px) { .feature-hero { grid-template-columns:1fr; gap:14px; } }
 
     /* ── SCREENSHOTS (vertical picker + slide-in gallery) ── */
     .screenshots { padding:80px 40px; background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
@@ -536,6 +537,7 @@
       <div class="fh-card"><span class="fh-icon">🗂</span><div class="fh-title">Phases</div><div class="fh-desc">Group tasks, track their combined progress, and collapse them with a click.</div></div>
       <div class="fh-card"><span class="fh-icon">🔗</span><div class="fh-title">Dependencies</div><div class="fh-desc">Late work pushes everything after it, automatically. Lag and critical path built in.</div></div>
       <div class="fh-card"><span class="fh-icon">📄</span><div class="fh-title">PDF reports</div><div class="fh-desc">A plain-English summary anyone can read, followed by the full schedule.</div></div>
+      <div class="fh-card"><span class="fh-icon">👥</span><div class="fh-title">Team collaboration</div><div class="fh-desc">PM and member roles, date change approvals, inboxes and a shared project log.</div></div>
     </div>
     <div class="feature-pills">
       <span>Critical path</span>
@@ -551,8 +553,6 @@
       <span>Status dashboard</span>
       <span>Built-in help</span>
       <span>Works offline</span>
-      <span>Roles &amp; approvals</span>
-      <span>Project log</span>
       <span>Audit trail</span>
     </div>
   </section>
