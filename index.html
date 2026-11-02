@@ -227,15 +227,14 @@
     .features { padding:80px 40px; max-width:1160px; margin:0 auto; }
     .section-label { text-align:center; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--indigo); margin-bottom:12px; }
     .section-title { text-align:center; font-size:clamp(22px,3.5vw,32px); font-weight:800; letter-spacing:-0.5px; margin-bottom:48px; }
-    .feature-groups { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
-    .feature-group { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px; }
-    .fg-head { font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#a5b4fc; padding-bottom:12px; margin-bottom:14px; border-bottom:1px solid var(--border); }
-    .fg-head small { display:block; margin-top:2px; font-size:11px; font-weight:500; letter-spacing:0; text-transform:none; color:var(--muted); }
-    .fg-list { list-style:none; display:flex; flex-direction:column; gap:9px; }
-    .fg-list li { display:flex; gap:8px; font-size:14px; color:var(--text); }
-    .fg-list li::before { content:'✓'; color:var(--emerald); font-weight:700; font-size:12px; margin-top:2px; }
-    @media(max-width:1000px) { .feature-groups { grid-template-columns:repeat(2,1fr); } }
-    @media(max-width:560px) { .feature-groups { grid-template-columns:1fr; } }
+    .feature-hero { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:36px; }
+    .fh-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:28px 24px; text-align:center; }
+    .fh-icon { font-size:30px; display:block; margin-bottom:12px; }
+    .fh-title { font-size:17px; font-weight:700; margin-bottom:6px; }
+    .fh-desc { font-size:13.5px; color:var(--subtle); line-height:1.6; }
+    .feature-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; max-width:860px; margin:0 auto; }
+    .feature-pills span { font-size:13px; color:var(--subtle); background:var(--surface); border:1px solid var(--border); border-radius:999px; padding:7px 14px; }
+    @media(max-width:768px) { .feature-hero { grid-template-columns:1fr; gap:14px; } }
 
     /* ── SCREENSHOTS (vertical picker + slide-in gallery) ── */
     .screenshots { padding:80px 40px; background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
@@ -533,47 +532,28 @@
   <section class="features" id="features">
     <div class="section-label">Features</div>
     <h2 class="section-title">Everything you need. Nothing you don't.</h2>
-    <div class="feature-groups">
-      <div class="feature-group">
-        <div class="fg-head">🗓 Planning</div>
-        <ul class="fg-list">
-          <li>Drag &amp; drop</li>
-          <li>Phases</li>
-          <li>Dependencies with lag</li>
-          <li>Critical path</li>
-          <li>Working-day calendar</li>
-          <li>Templates</li>
-        </ul>
-      </div>
-      <div class="feature-group">
-        <div class="fg-head">📊 Tracking</div>
-        <ul class="fg-list">
-          <li>Milestones &amp; baselines</li>
-          <li>Status dashboard</li>
-          <li>Find, filter &amp; zoom</li>
-          <li>Light or dark</li>
-          <li>Built-in help</li>
-        </ul>
-      </div>
-      <div class="feature-group">
-        <div class="fg-head">📄 Sharing &amp; files</div>
-        <ul class="fg-list">
-          <li>PDF reports</li>
-          <li>Print, PNG &amp; Excel</li>
-          <li>Import</li>
-          <li>Works offline</li>
-        </ul>
-      </div>
-      <div class="feature-group">
-        <div class="fg-head">👥 Teams<small>Team &amp; Business plans</small></div>
-        <ul class="fg-list">
-          <li>PM &amp; member roles</li>
-          <li>Date change approvals</li>
-          <li>Inboxes on login</li>
-          <li>Project log</li>
-          <li>Audit trail</li>
-        </ul>
-      </div>
+    <div class="feature-hero">
+      <div class="fh-card"><span class="fh-icon">🗂</span><div class="fh-title">Phases</div><div class="fh-desc">Group tasks, track their combined progress, and collapse them with a click.</div></div>
+      <div class="fh-card"><span class="fh-icon">🔗</span><div class="fh-title">Dependencies</div><div class="fh-desc">Late work pushes everything after it, automatically. Lag and critical path built in.</div></div>
+      <div class="fh-card"><span class="fh-icon">📄</span><div class="fh-title">PDF reports</div><div class="fh-desc">A plain-English summary anyone can read, followed by the full schedule.</div></div>
+    </div>
+    <div class="feature-pills">
+      <span>Critical path</span>
+      <span>Milestones &amp; baselines</span>
+      <span>Working-day calendar</span>
+      <span>Templates</span>
+      <span>Undo &amp; redo</span>
+      <span>Import from Excel &amp; MS Project</span>
+      <span>Excel &amp; PNG export</span>
+      <span>Find &amp; filter</span>
+      <span>Light &amp; dark themes</span>
+      <span>Color-blind palette</span>
+      <span>Status dashboard</span>
+      <span>Built-in help</span>
+      <span>Works offline</span>
+      <span>Roles &amp; approvals</span>
+      <span>Project log</span>
+      <span>Audit trail</span>
     </div>
   </section>
 
