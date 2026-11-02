@@ -231,9 +231,9 @@
     .feature-group { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px; }
     .fg-head { font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#a5b4fc; padding-bottom:12px; margin-bottom:14px; border-bottom:1px solid var(--border); }
     .fg-head small { display:block; margin-top:2px; font-size:11px; font-weight:500; letter-spacing:0; text-transform:none; color:var(--muted); }
-    .fg-list { list-style:none; display:flex; flex-direction:column; gap:12px; }
-    .fg-list strong { display:block; font-size:13.5px; font-weight:600; color:var(--text); }
-    .fg-list span { display:block; font-size:12.5px; color:var(--subtle); line-height:1.5; }
+    .fg-list { list-style:none; display:flex; flex-direction:column; gap:9px; }
+    .fg-list li { display:flex; gap:8px; font-size:14px; color:var(--text); }
+    .fg-list li::before { content:'✓'; color:var(--emerald); font-weight:700; font-size:12px; margin-top:2px; }
     @media(max-width:1000px) { .feature-groups { grid-template-columns:repeat(2,1fr); } }
     @media(max-width:560px) { .feature-groups { grid-template-columns:1fr; } }
 
@@ -537,41 +537,41 @@
       <div class="feature-group">
         <div class="fg-head">🗓 Planning</div>
         <ul class="fg-list">
-          <li><strong>Drag &amp; drop</strong><span>Move, resize and reorder bars. Undo up to 100 steps.</span></li>
-          <li><strong>Phases</strong><span>Group tasks, see combined progress, collapse with a click.</span></li>
-          <li><strong>Dependencies with lag</strong><span>Late work pushes everything after it automatically.</span></li>
-          <li><strong>Critical path</strong><span>The tasks that set your end date, highlighted live.</span></li>
-          <li><strong>Working-day calendar</strong><span>Hide weekends, mark holidays, keep durations true.</span></li>
-          <li><strong>Templates</strong><span>Five built-in plans, or save your own. Duplicate to a new date.</span></li>
+          <li>Drag &amp; drop</li>
+          <li>Phases</li>
+          <li>Dependencies with lag</li>
+          <li>Critical path</li>
+          <li>Working-day calendar</li>
+          <li>Templates</li>
         </ul>
       </div>
       <div class="feature-group">
         <div class="fg-head">📊 Tracking</div>
         <ul class="fg-list">
-          <li><strong>Milestones &amp; baselines</strong><span>Flag overdue dates and see exactly where you've slipped.</span></li>
-          <li><strong>Status dashboard</strong><span>Completion, schedule health and approvals on one screen.</span></li>
-          <li><strong>Find, filter &amp; zoom</strong><span>Search by task or owner, filter by status, fit to window.</span></li>
-          <li><strong>Light or dark</strong><span>Two themes, 18 colors and a color-blind safe palette.</span></li>
-          <li><strong>Built-in help</strong><span>A searchable guide with Try it buttons, plus a chart key.</span></li>
+          <li>Milestones &amp; baselines</li>
+          <li>Status dashboard</li>
+          <li>Find, filter &amp; zoom</li>
+          <li>Light or dark</li>
+          <li>Built-in help</li>
         </ul>
       </div>
       <div class="feature-group">
         <div class="fg-head">📄 Sharing &amp; files</div>
         <ul class="fg-list">
-          <li><strong>PDF reports</strong><span>A plain-English summary page, then the full schedule.</span></li>
-          <li><strong>Print, PNG &amp; Excel</strong><span>Sharp images for slides, spreadsheets for everyone else.</span></li>
-          <li><strong>Import</strong><span>Excel, CSV and Microsoft Project XML, dependencies and all.</span></li>
-          <li><strong>Works offline</strong><span>Files live on your Mac, a network drive, SharePoint or OneDrive.</span></li>
+          <li>PDF reports</li>
+          <li>Print, PNG &amp; Excel</li>
+          <li>Import</li>
+          <li>Works offline</li>
         </ul>
       </div>
       <div class="feature-group">
         <div class="fg-head">👥 Teams<small>Team &amp; Business plans</small></div>
         <ul class="fg-list">
-          <li><strong>PM &amp; member roles</strong><span>Separate passwords. Members update their own progress.</span></li>
-          <li><strong>Date change approvals</strong><span>Members request a change, the PM approves or rejects.</span></li>
-          <li><strong>Inboxes on login</strong><span>Everyone sees what changed since they last looked.</span></li>
-          <li><strong>Project log</strong><span>A shared team journal with PM posts set apart.</span></li>
-          <li><strong>Audit trail</strong><span>Every action timestamped and attributed. PM only.</span></li>
+          <li>PM &amp; member roles</li>
+          <li>Date change approvals</li>
+          <li>Inboxes on login</li>
+          <li>Project log</li>
+          <li>Audit trail</li>
         </ul>
       </div>
     </div>
