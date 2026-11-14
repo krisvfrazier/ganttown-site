@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://ganttown.com/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://ganttown.com/images/schedule.png</image:loc><image:caption>Hendricks Remodel on Mac: phases, dependency arrows, the critical path in red, and today</image:caption></image:image>
+    <image:image><image:loc>https://ganttown.com/images/task.png</image:loc><image:caption>Task editor with phase, dates, assignee, progress, and dependencies</image:caption></image:image>
+    <image:image><image:loc>https://ganttown.com/images/dashboard.png</image:loc><image:caption>Dashboard with progress, milestones, and each task against the calendar</image:caption></image:image>
+    <image:image><image:loc>https://ganttown.com/images/project-log.png</image:loc><image:caption>Project log open over the schedule</image:caption></image:image>
+    <image:image><image:loc>https://ganttown.com/images/team.png</image:loc><image:caption>Team tab on a Business license</image:caption></image:image>
+    <image:image><image:loc>https://ganttown.com/images/audit.png</image:loc><image:caption>Audit log of date changes, completed tasks, and password events</image:caption></image:image>
   </url>
   <url>
     <loc>https://ganttown.com/what-is-a-gantt-chart.html</loc>
